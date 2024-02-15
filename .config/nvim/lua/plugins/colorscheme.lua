@@ -8,8 +8,8 @@ return {
   -- tairiki scheme
   {
     "deparr/tairiki.nvim",
-    lazy = false,
-    priority = 1000,
+    -- lazy = false,
+    -- priority = 1000,
   },
 
   -- github themes
@@ -20,16 +20,17 @@ return {
   },
 
   {
-    'Yazeed1s/minimal.nvim',
+    "HoNamDuong/hybrid.nvim",
     lazy = false,
     priority = 1000,
+    opts = {},
   },
 
   -- Configure LazyVim to load tomorrow-night
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tairiki",
+      colorscheme = "hybrid",
     },
   },
 }
