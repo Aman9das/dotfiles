@@ -1,17 +1,12 @@
-return {
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    opts = {
-      filesystem = {
-        filtered_items = {
-          hide_dotfiles = false,
-          -- always_show = {
-          --   ".config",
-          --   ".gitignore*",
-          --   ".zshrc"
-          -- }
-        }
-      }
+require("neo-tree").setup {
+  filesystem = {
+    filtered_items = {
+      hide_dotfiles = false,
+      -- always_show = {
+      --   ".config",
+      --   ".gitignore*",
+      --   ".zshrc"
+      -- }
     }
   }
 }
