@@ -2,4 +2,4 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-vim.keymap.set("n", "<leader>ctt", ":split term<cr>", { desc = "terminal" })
+vim.keymap.set("n", "<leader>ctt", ":split | terminal<cr>", { desc = "terminal" })
