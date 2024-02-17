@@ -17,6 +17,10 @@ return {
       { "nvim-telescope/telescope.nvim" },
       { "Shatur/neovim-session-manager" },
     },
+    keys = {
+      { "<leader>fp", "<cmd>Telescope neovim-project history<cr>",  desc = "Project history" },
+      { "<leader>fP", "<cmd>Telescope neovim-project discover<cr>", desc = "Project discover" },
+    },
     lazy = false,
     priority = 100,
   },
