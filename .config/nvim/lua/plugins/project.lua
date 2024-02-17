@@ -5,6 +5,7 @@ return {
       projects = { -- define project roots
         "~/Projects/acad/solo/ISLR",
         "~/dotfiles/",
+        "~/Projects/comm/*/"
       },
       last_session_on_startup = false,
     },
