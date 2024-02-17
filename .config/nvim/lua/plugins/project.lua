@@ -3,7 +3,7 @@ return {
     "coffebar/neovim-project",
     opts = {
       projects = { -- define project roots
-        "~/Projects/*",
+        "~/Projects/acad/solo/ISLR",
         "~/dotfiles/",
       },
       last_session_on_startup = false,
