@@ -6,9 +6,10 @@ return {
         -- r formatter
         ["r"] = { "rprettify" },
         ["python"] = { "black" },
-        ["quarto"] = { "markdownlint-cli2", "rprettify", "black" },
-        ["rmd"] = { "markdownlint-cli2", "rprettify" },
-        ["*"] = { "codespell" },
+        ["quarto"] = { "mdformat", "rprettify" },
+        ["rmd"] = { "mdformat", "rprettify" },
+        ["md"] = { "mdformat", "cbfmt" },
+        ["*"] = { "codespell", "trim_whitespace", "trim_newlines" },
       },
       log_level = vim.log.levels.DEBUG,
       formatters = {

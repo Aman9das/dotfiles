@@ -5,7 +5,8 @@ return {
       ensure_installed = {
         "black",
         "codespell",
-        "markdownlint-cli2",
+        "mdformat",
+        "cbfmt",
       },
     },
   },
