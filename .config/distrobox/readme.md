@@ -12,3 +12,5 @@ To build, run:
 ```
 distrobox assemble create -R
 ```
+
+To disable rebuild of a box, simply uncomment `replace=false` option

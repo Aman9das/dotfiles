@@ -13,10 +13,9 @@ model_dir="/var/mnt/Data/Models"
 
 # Functions
 
-
 # Main Function
 main() {
-  curl https://ollama.ai/install.sh | sh
+	curl https://ollama.ai/install.sh | sh
 }
 
 main "$@"

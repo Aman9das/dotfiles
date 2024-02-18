@@ -2,11 +2,7 @@ return {
   {
     "coffebar/neovim-project",
     opts = {
-      projects = { -- define project roots
-        "~/Projects/acad/solo/ISLR",
-        "~/dotfiles/",
-        "~/Projects/comm/*/"
-      },
+      projects = dofile(os.getenv("HOME") .. "/projects/project-list.lua"),
       last_session_on_startup = false,
     },
     init = function()
@@ -19,7 +15,7 @@ return {
       { "Shatur/neovim-session-manager" },
     },
     keys = {
-      { "<leader>fp", "<cmd>Telescope neovim-project history<cr>",  desc = "Project history" },
+      { "<leader>fp", "<cmd>Telescope neovim-project history<cr>", desc = "Project history" },
       { "<leader>fP", "<cmd>Telescope neovim-project discover<cr>", desc = "Project discover" },
     },
     lazy = false,
@@ -41,5 +37,5 @@ return {
 
       table.insert(opts.config.center, 3, projects)
     end,
-  }
+  },
 }

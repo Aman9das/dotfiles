@@ -1,8 +1,8 @@
 #!/bin/bash
- 
+
 # Define the main function which will contain your code
 main() {
-  curl -s https://cht.sh/:cht.sh | sudo tee /usr/bin/cht.sh && sudo chmod +x /usr/bin/cht.sh
+	curl -s https://cht.sh/:cht.sh | sudo tee /usr/bin/cht.sh && sudo chmod +x /usr/bin/cht.sh
 }
 
 # Call the main function
