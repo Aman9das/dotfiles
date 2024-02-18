@@ -40,14 +40,6 @@ return {
       { "<leader>ctp",  ":split term://python<cr>",  desc = "terminal: python" },
       { "<leader>ctj",  ":split term://julia<cr>",   desc = "terminal: julia" },
     },
-    -- config = function()
-    --   require("quarto").setup({
-    --     keymap = {
-    --       rename = "",
-    --       format = "",
-    --     }
-    --   })
-    -- end
   },
 
   {
@@ -58,6 +50,16 @@ return {
         write_to_disk = true,
       },
     },
+    keys = {
+      {
+        "<leader>cF",
+        function()
+          require("otter").ask_format()
+        end,
+        mode = { "n", "v" },
+        desc = "Format Embedded Langs",
+      },
+    }
   },
 
   {

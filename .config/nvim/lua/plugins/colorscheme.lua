@@ -23,7 +23,10 @@ return {
     "HoNamDuong/hybrid.nvim",
     lazy = false,
     priority = 1000,
-    opts = {},
+    opts = {
+      terminal_colors = true,
+      transparent = true,
+    },
   },
 
   -- Configure LazyVim to load tomorrow-night
@@ -33,4 +36,16 @@ return {
       colorscheme = "hybrid",
     },
   },
+
+  -- fix nvim-notify colors
+  {
+    "rcarriga/nvim-notify",
+    -- dependencies = {
+    --   { "HoNamDuong/hybrid.nvim" },
+    -- },
+    opts = function(_, opts)
+      local bg_color = require("hybrid.colors").palette.yellow
+      opts.background_colour = bg_color
+    end
+  }
 }
