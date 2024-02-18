@@ -4,10 +4,10 @@ return {
     opts = {
       formatters_by_ft = {
         -- r formatter
-        ["r"] = { "rprettify", "styler" },
+        ["r"] = { "rprettify" },
         ["python"] = { "black" },
-        ["rmd"] = { "rprettify", "styler" },
-        ["qmd"] = { "rprettify", "black" },
+        ["quarto"] = { "markdownlint-cli2", "rprettify", "black" },
+        ["rmd"] = { "markdownlint-cli2", "rprettify" },
         ["*"] = { "codespell" },
       },
       log_level = vim.log.levels.DEBUG,
