@@ -26,7 +26,7 @@ return {
       keymap = {
         rename = "<leader>qR",
         format = "<leader>qf",
-      }
+      },
     },
     ft = "quarto",
     keys = {
@@ -44,22 +44,6 @@ return {
 
   {
     "jmbuhr/otter.nvim",
-    opts = {
-      buffers = {
-        set_filetype = true,
-        write_to_disk = true,
-      },
-    },
-    keys = {
-      {
-        "<leader>cF",
-        function()
-          require("otter").ask_format()
-        end,
-        mode = { "n", "v" },
-        desc = "Format Embedded Langs",
-      },
-    }
   },
 
   {
