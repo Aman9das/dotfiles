@@ -9,7 +9,7 @@ return {
         ["quarto"] = { "mdformat" },
         ["rmd"] = { "mdformat" },
         ["md"] = { "mdformat" },
-        ["*"] = { "codespell", "trim_whitespace", "trim_newlines" },
+        ["*"] = { "typos", "trim_whitespace", "trim_newlines" },
       },
       formatters = {
         rprettify = {

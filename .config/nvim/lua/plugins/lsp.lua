@@ -4,9 +4,10 @@ return {
     opts = {
       ensure_installed = {
         "black",
-        "codespell",
+        "typos",
         "mdformat",
-        "cbfmt",
+        -- "cbfmt",
+        -- "codespell"
         "r-languageserver",
         "pyright",
       },
