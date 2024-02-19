@@ -7,6 +7,8 @@ return {
         "codespell",
         "mdformat",
         "cbfmt",
+        "r-languageserver",
+        "pyright",
       },
     },
   },

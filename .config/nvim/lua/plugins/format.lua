@@ -11,7 +11,6 @@ return {
         ["md"] = { "mdformat" },
         ["*"] = { "codespell", "trim_whitespace", "trim_newlines" },
       },
-      log_level = vim.log.levels.DEBUG,
       formatters = {
         rprettify = {
           inherit = false,
