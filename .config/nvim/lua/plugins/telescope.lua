@@ -1,10 +1,12 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    opts = {
-      defaults = {
-        hidden = true,
-      },
-    }
-  }
+    opts = function()
+      return {
+        defaults = {
+          hidden = true,
+        },
+      }
+    end,
+  },
 }

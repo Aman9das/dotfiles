@@ -32,3 +32,7 @@ then use GNU stow to create symlinks
 ```
 stow .
 ```
+
+## Resources
+
+[Stow has forever changed the way I manage my dotfiles](https://youtu.be/y6XCebnB9gs)
