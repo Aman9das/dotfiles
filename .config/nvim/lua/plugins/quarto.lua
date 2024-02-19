@@ -30,15 +30,16 @@ return {
     },
     ft = "quarto",
     keys = {
-      { "<leader><cr>", ":SlimeSend<cr>",            desc = "send code chunk" },
-      { "<c-cr>",       ":SlimeSend<cr>",            desc = "send code chunk" },
-      { "<c-cr>",       "<esc>:SlimeSend<cr>i",      mode = "i",                desc = "send code chunk" },
-      { "<c-cr>",       "<Plug>SlimeRegionSend<cr>", mode = "v",                desc = "send code chunk" },
-      { "<cr>",         "<Plug>SlimeRegionSend<cr>", mode = "v",                desc = "send code chunk" },
-      { "<leader>ctr",  ":split term://R<cr>",       desc = "terminal: R" },
-      { "<leader>cti",  ":split term://ipython<cr>", desc = "terminal: ipython" },
-      { "<leader>ctp",  ":split term://python<cr>",  desc = "terminal: python" },
-      { "<leader>ctj",  ":split term://julia<cr>",   desc = "terminal: julia" },
+      { "<leader><cr>", ":SlimeSend<cr>", desc = "send code chunk" },
+      { "<c-cr>", ":SlimeSend<cr>", desc = "send code chunk" },
+      { "<c-cr>", "<esc>:SlimeSend<cr>i", mode = "i", desc = "send code chunk" },
+      { "<c-cr>", "<Plug>SlimeRegionSend<cr>", mode = "v", desc = "send code chunk" },
+      { "<cr>", "<Plug>SlimeRegionSend<cr>", mode = "v", desc = "send code chunk" },
+      { "<leader>ct", desc = "terminal" },
+      { "<leader>ctr", ":split term://R<cr>", desc = "terminal: R" },
+      { "<leader>cti", ":split term://ipython<cr>", desc = "terminal: ipython" },
+      { "<leader>ctp", ":split term://python<cr>", desc = "terminal: python" },
+      { "<leader>ctj", ":split term://julia<cr>", desc = "terminal: julia" },
     },
   },
 
@@ -55,7 +56,7 @@ return {
     end,
   },
 
-  -- send code from python/r/qmd documets to a terminal or REPL
+  -- send code from python/r/qmd documents to a terminal or REPL
   -- like ipython, R, bash
   {
     "jpalardy/vim-slime",

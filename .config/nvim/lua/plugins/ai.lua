@@ -4,6 +4,7 @@ return {
     "dustinblackman/oatmeal.nvim",
     cmd = { "Oatmeal" },
     keys = {
+      { "<leader>o", desc = "other" },
       { "<leader>om", mode = "n", desc = "Start Oatmeal session" },
       { "<leader>om", mode = "v", desc = "Start Oatmeal session" },
     },
