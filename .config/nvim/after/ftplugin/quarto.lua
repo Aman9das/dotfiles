@@ -15,7 +15,7 @@ vim.keymap.set("n", "<leader>qra", ":QuartoSendAll<cr>", { desc = "quarto run al
 vim.b.slime_cell_delimiter = "```"
 
 -- wrap text, but by word no character
--- indent the wrappped line
+-- indent the wrapped line
 vim.wo.wrap = true
 vim.wo.linebreak = true
 vim.wo.breakindent = true

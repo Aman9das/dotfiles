@@ -47,14 +47,14 @@ return {
     "jmbuhr/otter.nvim",
   },
 
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = { "jmbuhr/otter.nvim" },
-    opts = function(_, opts)
-      local cmp = require("cmp")
-      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "otter" } }))
-    end,
-  },
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   dependencies = { "jmbuhr/otter.nvim" },
+  --   opts = function(_, opts)
+  --     local cmp = require("cmp")
+  --     opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "otter" } }))
+  --   end,
+  -- },
 
   -- send code from python/r/qmd documents to a terminal or REPL
   -- like ipython, R, bash
@@ -156,4 +156,35 @@ return {
       },
     },
   },
+
+  -- paste an image from the clipboard or drag-and-drop
+  {
+    "HakonHarnes/img-clip.nvim",
+    event = "BufEnter",
+    opts = {
+      markdown = {
+        url_encode_path = true,
+        template = "![$CURSOR]($FILE_PATH)",
+        drag_and_drop = {
+          download_images = false,
+        },
+      },
+      quarto = {
+        url_encode_path = true,
+        template = "![$CURSOR]($FILE_PATH)",
+        drag_and_drop = {
+          download_images = false,
+        },
+      },
+    },
+  },
+
+  -- preview equations
+  -- {
+  --   "jbyuki/nabla.nvim",
+  --   keys = {
+  --     { "<leader>oE", ':lua require"nabla".toggle_virt()<cr>', "toggle equations" },
+  --     { "<leader>oe", ':lua require"nabla".popup()<cr>', "hover equation" },
+  --   },
+  -- },
 }

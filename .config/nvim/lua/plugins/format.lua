@@ -6,9 +6,9 @@ return {
         -- r formatter
         ["r"] = { "rprettify" },
         ["python"] = { "black" },
-        ["quarto"] = { "mdformat", "rprettify" },
-        ["rmd"] = { "mdformat", "rprettify" },
-        ["md"] = { "mdformat", "cbfmt" },
+        ["quarto"] = { "mdformat" },
+        ["rmd"] = { "mdformat" },
+        ["md"] = { "mdformat" },
         ["*"] = { "codespell", "trim_whitespace", "trim_newlines" },
       },
       log_level = vim.log.levels.DEBUG,
