@@ -20,5 +20,25 @@ return {
         },
       },
     },
+    keys = {
+      {
+        "<leader>cf",
+        function()
+          require("conform").format({ formatters = { "injected" } })
+        end,
+        mode = { "n", "v" },
+        desc = "Format Chunk",
+      },
+      {
+        "<leader>cF",
+        function()
+          -- This file is automatically loaded by lazyvim.config.init
+          local Util = require("lazyvim.util")
+          Util.format({ force = true })
+        end,
+        mode = { "n", "v" },
+        desc = "Format Document",
+      },
+    },
   },
 }
