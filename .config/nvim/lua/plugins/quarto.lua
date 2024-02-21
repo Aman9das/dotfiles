@@ -167,29 +167,25 @@ return {
     "HakonHarnes/img-clip.nvim",
     event = "BufEnter",
     opts = {
-      markdown = {
-        url_encode_path = true,
-        template = "![$CURSOR]($FILE_PATH)",
-        drag_and_drop = {
-          download_images = false,
-        },
-      },
-      quarto = {
-        url_encode_path = true,
-        template = "![$CURSOR]($FILE_PATH)",
-        drag_and_drop = {
-          download_images = false,
+      filetypes = {
+        quarto = {
+          url_encode_path = true,
+          template = "![$CURSOR]($FILE_PATH)",
+
+          drag_and_drop = {
+            download_images = false,
+          },
         },
       },
     },
   },
 
   -- preview equations
-  -- {
-  --   "jbyuki/nabla.nvim",
-  --   keys = {
-  --     { "<leader>oE", ':lua require"nabla".toggle_virt()<cr>', "toggle equations" },
-  --     { "<leader>oe", ':lua require"nabla".popup()<cr>', "hover equation" },
-  --   },
-  -- },
+  {
+    "jbyuki/nabla.nvim",
+    keys = {
+      { "<leader>oE", ':lua require"nabla".toggle_virt()<cr>', "toggle equations" },
+      { "<leader>oe", ':lua require"nabla".popup()<cr>', "hover equation" },
+    },
+  },
 }
