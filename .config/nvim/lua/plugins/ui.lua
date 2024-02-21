@@ -4,8 +4,8 @@ return {
     opts = {
       options = {
         section_separators = "",
-        component_separators = "│",
-      }
-    }
-  }
+        component_separators = "",
+      },
+    },
+  },
 }
