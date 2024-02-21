@@ -26,8 +26,8 @@ return {
 
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
         { name = "otter" }, -- for code chunks in quarto
-        { name = "path" },
-        { name = "nvim_lsp" },
+        -- { name = "path" },
+        -- { name = "nvim_lsp" },
         { name = "nvim_lsp_signature_help" },
         { name = "luasnip", keyword_length = 3, max_item_count = 3 },
         { name = "pandoc_references" },
