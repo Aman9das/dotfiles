@@ -24,6 +24,15 @@ return {
       local lspkind = require("lspkind")
       lspkind.init()
 
+      -- accept explicitly selected suggestion
+      opts.mapping = vim.tbl_deep_extend("force", opts.mapping, {
+        ["<CR>"] = cmp.mapping.confirm({ select = false }),
+      })
+      opts.preselect = cmp.PreselectMode.None
+      opts.completion = {
+        completeopt = "menu,menuone,noinsert,noselect",
+      }
+
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
         { name = "otter" }, -- for code chunks in quarto
         -- { name = "path" },

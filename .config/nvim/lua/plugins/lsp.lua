@@ -10,6 +10,7 @@ return {
         -- "codespell"
         "r-languageserver",
         "pyright",
+        "json-lsp",
       },
     },
   },
