@@ -1,17 +1,19 @@
-# Download the zip file
+# Download the Lucas Sans zip file
 wget https://www.wfonts.com/download/data/2016/07/08/lucida-sans/lucida-sans.zip
-
 # Unzip the file and extract only LSANS.TTF, removing the rest
-unzip -j lucida-sans.zip LSANS.TTF -d /tmp/lsans
-
+unzip -j lucida-sans.zip LSANS.TTF -d /tmp/font
 # Move the file to the desired location
-cp -n /tmp/lsans/LSANS.TTF ~/.local/share/fonts/lsans.ttf
+mv -n /tmp/font/LSANS.TTF ~/.local/share/fonts/lsans.ttf
 
+# Download the IntelOneMono zip file
+wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/IntelOneMono.zip
+# Unzip the file and extract only LSANS.TTF, removing the rest
+unzip -j IntelOneMono.zip IntoneMonoNerdFont-Regular.ttf -d /tmp/font
 # Move the file to the desired location
-sudo mv -n /tmp/lsans/LSANS.TTF /usr/share/fonts/lsans.ttf
+mv -n /tmp/font/IntoneMonoNerdFont-Regular.ttf ~/.local/share/fonts/IntoneMonoNerdFont-Regular.ttf
 
 # Update the font cache
 sudo fc-cache -f -v
 
 # Clean up the temporary directory
-rm -rf /tmp/lsans
+rm -rf /tmp/font
