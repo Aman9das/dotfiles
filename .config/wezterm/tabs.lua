@@ -26,7 +26,7 @@ function module.apply_to_config(config)
 	config.hide_tab_bar_if_only_one_tab = true
 
 	-- bottom tab bar
-	config.tab_bar_at_bottom = true
+	-- config.tab_bar_at_bottom = true
 end
 
 -- return our module tale

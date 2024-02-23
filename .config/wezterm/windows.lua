@@ -18,7 +18,7 @@ function module.apply_to_config(config)
 		left = "0.5cell",
 		right = "0.5cell",
 		top = "0.2cell",
-		bottom = "0.1cell",
+		bottom = "0cell",
 	}
 end
 
