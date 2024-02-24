@@ -19,14 +19,17 @@ return {
   {
     "huynle/ogpt.nvim",
     event = "VeryLazy",
+    keys = {
+      { "<leader>og", ":OGPT<CR>", desc = "OGPT" },
+    },
     opts = {
       default_provider = "ollama",
       providers = {
         ollama = {
-          api_host = os.getenv("OLLAMA_API_HOST") or "http://localhost:11434",
-          api_key = os.getenv("OLLAMA_API_KEY") or "",
+          -- api_host = os.getenv("OLLAMA_API_HOST") or "http://localhost:11434",
+          -- api_key = os.getenv("OLLAMA_API_KEY") or "",
           model = {
-            name = "dolphin-mistral:latest",
+            name = "deepseek-coder:6.7b",
             system_message = nil,
           },
         },
@@ -38,17 +41,17 @@ return {
         border = {
           style = "single",
         },
-        win_options = {
-          winhighlight = "Normal:FloatBorder,FloatBorder:FloatBorder",
-        },
+        -- win_options = {
+        --   winhighlight = "Normal:FloatBorder,FloatBorder:FloatBorder",
+        -- },
       },
       output_window = {
         border = {
           style = "single",
         },
-        win_options = {
-          winhighlight = "Normal:FloatBorder,FloatBorder:FloatBorder",
-        },
+        -- win_options = {
+        --   winhighlight = "Normal:FloatBorder,FloatBorder:FloatBorder",
+        -- },
       },
     },
     dependencies = {
