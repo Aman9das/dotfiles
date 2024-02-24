@@ -20,13 +20,16 @@ function module.apply_to_config(config)
 
 	-- enable retro tab bar
 	config.use_fancy_tab_bar = false
-	config.tab_max_width = 36
+	config.tab_max_width = 24
 
 	-- hide a single tab
 	config.hide_tab_bar_if_only_one_tab = true
 
 	-- bottom tab bar
 	-- config.tab_bar_at_bottom = true
+
+	-- prefer to launch tabs
+	config.prefer_to_spawn_tabs = true
 end
 
 -- return our module tale

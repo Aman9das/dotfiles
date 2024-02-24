@@ -49,6 +49,11 @@ wezterm.on("update-right-status", function(window, pane)
 	-- Each element holds the text for a cell in a "powerline" style << fade
 	local cells = {}
 
+  -- insert user name
+  -- local os = require("os")
+  -- local user = os.getenv("USER")
+  -- table.insert(cells, user)
+
 	-- Figure out the cwd and host of the current pane.
 	-- This will pick up the hostname for the remote host if your
 	-- shell is using OSC 7 on the remote host.
@@ -90,8 +95,8 @@ wezterm.on("update-right-status", function(window, pane)
 		table.insert(cells, hostname)
 	end
 
-	-- I like my date/time in this style: "Wed Mar 3 08:14"
-	local date = wezterm.strftime("%a %b %-d %H:%M")
+	-- I like my date/time in this style: "08:14 PM, Wed Mar 3"
+	local date = wezterm.strftime("%I:%M %p, %a %b %-d")
 	table.insert(cells, date)
 
 	-- An entry for each battery (typically 0 or 1 battery)
