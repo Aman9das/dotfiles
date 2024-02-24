@@ -15,21 +15,45 @@ return {
     },
   },
 
+  -- Simple, minimal Lazy.nvim configuration
   {
-    "jackMort/ChatGPT.nvim",
+    "huynle/ogpt.nvim",
     event = "VeryLazy",
-    config = function()
-      require("chatgpt").setup({
-        api_key_cmd = "bw get notes chatgpt-nvim-secret-key --nointeraction --session j1h551YdVAIQRWmzey+EhEFY4t7JLRNd3co1cWc0X8ldnl4pkO3gY7oGCe1+XBvWwtZh6f57ycNS+ZnRDZabrg==",
-        popup_layout = {
-          default = "right",
+    opts = {
+      default_provider = "ollama",
+      providers = {
+        ollama = {
+          api_host = os.getenv("OLLAMA_API_HOST") or "http://localhost:11434",
+          api_key = os.getenv("OLLAMA_API_KEY") or "",
+          model = {
+            name = "dolphin-mistral:latest",
+            system_message = nil,
+          },
         },
-      })
-    end,
+      },
+      popup_layout = {
+        default = "right",
+      },
+      input_window = {
+        border = {
+          style = "single",
+        },
+        win_options = {
+          winhighlight = "Normal:FloatBorder,FloatBorder:FloatBorder",
+        },
+      },
+      output_window = {
+        border = {
+          style = "single",
+        },
+        win_options = {
+          winhighlight = "Normal:FloatBorder,FloatBorder:FloatBorder",
+        },
+      },
+    },
     dependencies = {
       "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim",
-      "folke/trouble.nvim",
       "nvim-telescope/telescope.nvim",
     },
   },
