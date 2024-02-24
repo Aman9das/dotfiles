@@ -21,7 +21,7 @@ zstyle ':z4h:' term-shell-integration 'yes'
 
 # Right-arrow key accepts one character ('partial-accept') from
 # command autosuggestions or the whole thing ('accept')?
-zstyle ':z4h:autosuggestions' forward-char 'accept'
+zstyle ':z4h:autosuggestions' forward-char 'partial-accept'
 
 # Recursively traverse directories when TAB-completing files.
 zstyle ':z4h:fzf-complete' recurse-dirs 'no'
@@ -67,12 +67,17 @@ export GPG_TTY=$TTY
 # Source additional local files if they exist.
 z4h source ~/.env.zsh
 z4h source ~/.config/wezterm/zsh.sh
+# z4h source ~/.config/zsh/zoxide.zsh
+eval "$(zoxide init --cmd cd zsh)"
 
 # Use additional Git repositories pulled in with `z4h install`.
 #
 # This is just an example that you should delete. It does nothing useful.
 # z4h source ohmyzsh/ohmyzsh/lib/diagnostics.zsh  # source an individual file
-# z4h load   ohmyzsh/ohmyzsh/plugins/emoji-clock  # load a plugin
+z4h load   ohmyzsh/ohmyzsh/plugins/git  # load a plugin
+z4h load   ohmyzsh/ohmyzsh/plugins/podman  # load a plugin
+z4h load   ohmyzsh/ohmyzsh/plugins/ssh  # load a plugin
+z4h load   ohmyzsh/ohmyzsh/plugins/sudo  # load a plugin
 
 # Define key bindings.
 z4h bindkey z4h-backward-kill-word  Ctrl+Backspace     Ctrl+H
