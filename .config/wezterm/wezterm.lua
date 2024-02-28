@@ -2,6 +2,7 @@ local colors = require("colors")
 local tabs = require("tabs")
 local fonts = require("fonts")
 local windows = require("windows")
+local system = require("system")
 
 local config = {}
 
@@ -16,6 +17,9 @@ fonts.apply_to_config(config)
 
 -- window configuration
 windows.apply_to_config(config)
+
+-- system settings
+system.apply_to_config(config)
 
 -- startup
 require("startup")
