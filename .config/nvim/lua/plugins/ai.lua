@@ -1,21 +1,21 @@
 return {
   -- oatmeal ollama client
-  {
-    "dustinblackman/oatmeal.nvim",
-    cmd = { "Oatmeal" },
-    keys = {
-      { "<leader>o", desc = "other" },
-      { "<leader>om", mode = "n", desc = "Oatmeal session" },
-      { "<leader>om", mode = "v", desc = "Oatmeal session on chunk" },
-    },
-    opts = {
-      backend = "ollama",
-      model = "codellama:7b",
-      theme_file = "/var/home/aman/.cache/oatmeal/base16-tomorrow-night.tmTheme",
-    },
-  },
+  -- {
+  --   "dustinblackman/oatmeal.nvim",
+  --   cmd = { "Oatmeal" },
+  --   keys = {
+  --     { "<leader>o", desc = "other" },
+  --     { "<leader>om", mode = "n", desc = "Oatmeal session" },
+  --     { "<leader>om", mode = "v", desc = "Oatmeal session on chunk" },
+  --   },
+  --   opts = {
+  --     backend = "ollama",
+  --     model = "codellama:7b",
+  --     theme_file = "/var/home/aman/.cache/oatmeal/base16-tomorrow-night.tmTheme",
+  --   },
+  -- },
 
-  -- Simple, minimal Lazy.nvim configuration
+  -- OGPT configuration
   {
     "huynle/ogpt.nvim",
     event = "VeryLazy",
@@ -39,19 +39,48 @@ return {
       },
       input_window = {
         border = {
-          style = "single",
+          -- style = "single",
+          highlight = "Normal",
         },
-        -- win_options = {
-        --   winhighlight = "Normal:FloatBorder,FloatBorder:FloatBorder",
-        -- },
+        win_options = {
+          winhighlight = "Normal:Normal,FloatBorder:Normal",
+        },
+      },
+      util_window = {
+        border = {
+          style = "single",
+          highlight = "Normal",
+        },
+        win_options = {
+          winhighlight = "Normal:Normal,FloatBorder:Normal",
+        },
+      },
+      instruction_window = {
+        border = {
+          style = "single",
+          highlight = "Normal",
+        },
+        win_options = {
+          winhighlight = "Normal:Normal,FloatBorder:Normal",
+        },
+      },
+      parameters_window = {
+        border = {
+          style = "single",
+          highlight = "Normal",
+        },
+        win_options = {
+          winhighlight = "Normal:Normal,FloatBorder:Normal",
+        },
       },
       output_window = {
         border = {
           style = "single",
+          highlight = "Normal",
         },
-        -- win_options = {
-        --   winhighlight = "Normal:FloatBorder,FloatBorder:FloatBorder",
-        -- },
+        win_options = {
+          winhighlight = "Normal:Normal,FloatBorder:Normal",
+        },
       },
     },
     dependencies = {
