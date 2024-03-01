@@ -23,3 +23,6 @@ _darcs
 
 # Custom ignorefiles
 .nvim.lua
+
+# root directory
+root
