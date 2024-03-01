@@ -1,0 +1,30 @@
+#!/usr/bin/bash
+
+# Function to check if a command exists
+command_exists() {
+  command -v "$1" >/dev/null 2>&1
+}
+
+# Check if arguments are given
+if [[ -n "$@" ]]; then
+  # Check if wezterm command exists
+  if command_exists wezterm; then
+    wezterm start -e $@
+  # Check if wezterm flatpak exists
+  elif command_exists flatpak && flatpak list --app --columns=application | grep -q '^org\.wezfurlong\.wezterm$'; then
+    flatpak run org.wezfurlong.wezterm start -e "$@"
+  else
+    /usr/bin/gnome-terminal --full-screen --window -- "$@"
+  fi
+else
+  # No arguments given, check and run in order
+  if command_exists wezterm; then
+    wezterm start
+  elif command_exists ptyxis; then
+    /usr/bin/ptyxis --new-window
+  elif command_exists flatpak && flatpak list --app --columns=application | grep -q '^org\.gnome\.Ptyxis$'; then
+    flatpak run org.gnome.Ptyxis --new-window
+  else
+    /usr/bin/gnome-terminal --window
+  fi
+fi
