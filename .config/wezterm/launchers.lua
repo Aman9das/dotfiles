@@ -12,10 +12,14 @@ local module = {}
 -- function that accepts the config object, like this:
 function module.apply_to_config(config)
 	-- default distrobox
-	config.default_prog = { "distrobox-enter", "bluefin-cli", "--", "zsh -l" }
+	-- config.default_prog = { "distrobox-enter", "bluefin-cli", "--", "zsh -l" }
 
-	-- distroboxe
+	-- distroboxes
 	config.launch_menu = {
+		{
+			label = "New Tab (domain host)",
+			args = { os.getenv("SHELL"), "-l" },
+		},
 		{
 			label = "New Tab (domain rbox)",
 			args = { "distrobox-enter", "rbox", "--", "zsh -l" },
@@ -24,13 +28,14 @@ function module.apply_to_config(config)
 			label = "New Tab (domain box)",
 			args = { "distrobox-enter", "box", "--", "zsh -l" },
 		},
+	}
+
+	-- keymap for launcher
+	config.keys = {
 		{
-			label = "New Tab (domain bluefin-cli)",
-			args = { "distrobox-enter", "bluefin-cli", "--", "zsh -l" },
-		},
-		{
-			label = "New Tab (domain host)",
-			args = { os.getenv("SHELL"), "-l" },
+			key = " ",
+			mods = "CTRL",
+			action = wezterm.action.ShowLauncher,
 		},
 	}
 
