@@ -23,7 +23,7 @@ function module.apply_to_config(config)
 	config.tab_max_width = 24
 
 	-- hide a single tab
-	config.hide_tab_bar_if_only_one_tab = true
+	-- config.hide_tab_bar_if_only_one_tab = true
 
 	-- bottom tab bar
 	-- config.tab_bar_at_bottom = true

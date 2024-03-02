@@ -42,6 +42,9 @@ tomorrow.palette = {
     dull_cyan       = "#5e8d87",
 }
 
+-- export palette
+module.palette = tomorrow.palette
+
 -- This function is private to this module and is not visible
 -- outside.
 -- local function private_helper()

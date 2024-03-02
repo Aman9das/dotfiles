@@ -1,49 +1,18 @@
 local wezterm = require("wezterm")
 local mux = wezterm.mux
 
-wezterm.on("gui-startup", function(cmd)
-	local tab, pane, window = mux.spawn_window(cmd or {})
-	window:gui_window():maximize()
-end)
+-- wezterm.on("gui-startup", function(cmd)
+-- 	local tab, pane, window = mux.spawn_window(cmd or {})
+-- 	window:gui_window():maximize()
+-- end)
 
 -- right status
 
 local tomorrow = {}
+local colors = require("colors")
 
 -- stylua: ignore start
-tomorrow.palette = {
-    bright_black    = "#373b41",
-    black           = "#1d1f21",
-    dull_black      = "#151718",
-
-    bright_white    = "#eaeaea",
-    white           = "#c5c8c6",
-    dull_white      = "#707880",
-
-    bright_red      = "#d54e53",
-    red             = "#cc6666",
-    dull_red        = "#a54242",
-
-    bright_green    = "#b9ca4a",
-    green           = "#b5bd68",
-    dull_green      = "#8c9440",
-
-    bright_yellow   = "#e7c547",
-    yellow          = "#f0c674",
-    dull_yellow     = "#de935f",
-
-    bright_blue     = "#7aa6da",
-    blue            = "#81a2be",
-    dull_blue       = "#5f819d",
-
-    bright_magenta  = "#c397d8",
-    magenta         = "#b294bb",
-    dull_magenta    = "#85678f",
-
-    bright_cyan     = "#70c0b1",
-    cyan            = "#8abeb7",
-    dull_cyan       = "#5e8d87",
-}
+tomorrow.palette = colors.palette
 
 wezterm.on("update-right-status", function(window, pane)
 	-- Each element holds the text for a cell in a "powerline" style << fade
@@ -123,7 +92,7 @@ wezterm.on("update-right-status", function(window, pane)
     tomorrow.palette.dull_white,
     tomorrow.palette.white,
     tomorrow.palette.white,
-    tomorrow.palette.bright_black,
+    tomorrow.palette.black,
 	}
 
 	-- The elements to be formatted
