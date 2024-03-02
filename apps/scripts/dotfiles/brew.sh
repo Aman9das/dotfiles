@@ -15,3 +15,6 @@ else
 	echo "Neither brew nor ujust is in PATH, installing Homebrew..."
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
+
+# Restore Backup
+brew bundle
