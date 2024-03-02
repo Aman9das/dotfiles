@@ -19,6 +19,10 @@ zstyle ':z4h:' start-tmux       no
 # Mark up shell's output with semantic information.
 zstyle ':z4h:' term-shell-integration 'yes'
 
+# Better terminal title.
+# zstyle ':z4h:term-title:local' preexec '${1//\%/%%}'
+zstyle ':z4h:term-title:local' precmd  '${${${PWD/#$HOME/~}##*/}//\%/%%}'
+
 # Right-arrow key accepts one character ('partial-accept') from
 # command autosuggestions or the whole thing ('accept')?
 zstyle ':z4h:autosuggestions' forward-char 'partial-accept'
@@ -47,7 +51,7 @@ zstyle ':z4h:ssh:*' send-extra-files '~/.nanorc' '~/.env.zsh'
 # This doesn't do anything apart from cloning the repository and keeping it
 # up-to-date. Cloned files can be used after `z4h init`. This is just an
 # example. If you don't plan to use Oh My Zsh, delete this line.
-z4h install ohmyzsh/ohmyzsh || return
+# z4h install ohmyzsh/ohmyzsh || return
 
 # Install or update core components (fzf, zsh-autosuggestions, etc.) and
 # initialize Zsh. After this point console I/O is unavailable until Zsh
@@ -56,7 +60,7 @@ z4h install ohmyzsh/ohmyzsh || return
 z4h init || return
 
 # Extend PATH.
-export PATH=~/bin:~/.local/bin:$PATH
+# export PATH=~/bin:~/.local/bin:$PATH
 
 # Change $shell to zsh
 SHELL=zsh
@@ -67,8 +71,6 @@ export GPG_TTY=$TTY
 # Source additional local files if they exist.
 # z4h source ~/.env.sh
 z4h source ~/.config/wezterm/zsh.sh
-# z4h source ~/.config/zsh/zoxide.zsh
-eval "$(zoxide init --cmd cd zsh)"
 
 # Use additional Git repositories pulled in with `z4h install`.
 #
@@ -120,3 +122,6 @@ zstyle :compinstall filename '/var/home/aman/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+# zoxide initialization
+eval "$(zoxide init --cmd cd zsh)"
