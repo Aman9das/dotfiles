@@ -22,21 +22,21 @@ function module.apply_to_config(config)
 
 	-- window border
 	config.window_frame = {
-		-- border_left_width = "0.25cell",
-		border_right_width = "0.5cell",
-		-- border_bottom_height = "0.15cell",
-		-- border_top_height = "0.15cell",
-		border_left_color = palette.black,
-		border_right_color = palette.black,
-		border_bottom_color = palette.black,
-		border_top_color = palette.black,
+		border_left_width = "3px",
+		border_right_width = "3px",
+		border_bottom_height = "3px",
+		border_top_height = "3px",
+		border_left_color = palette.bright_black,
+		border_right_color = palette.bright_black,
+		border_bottom_color = palette.bright_black,
+		border_top_color = palette.bright_black,
 	}
 
 	-- terminal border
 	config.window_padding = {
-		left = "0.5cell",
+		left = "0cell",
 		right = "0cell",
-		top = "0.2cell",
+		top = "2px",
 		bottom = "0cell",
 	}
 end

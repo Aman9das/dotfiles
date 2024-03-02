@@ -3,6 +3,7 @@ local tabs = require("tabs")
 local fonts = require("fonts")
 local windows = require("windows")
 local system = require("system")
+local launchers = require("launchers")
 
 local config = {}
 
@@ -20,6 +21,9 @@ windows.apply_to_config(config)
 
 -- system settings
 system.apply_to_config(config)
+
+-- launchers
+launchers.apply_to_config(config)
 
 -- startup
 require("startup")
