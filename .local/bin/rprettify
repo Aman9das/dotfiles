@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
-R --quiet --no-environ --no-echo -e "styler::style_file(\"$1\")" 1>/dev/null 2>&1
+R --quiet --vanilla --no-echo -e "styler::style_file(\"$1\")" 1>/dev/null 2>&1
 cat "$1"

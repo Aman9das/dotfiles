@@ -6,11 +6,10 @@ local({
 })
 
 # set scientific notation
-options(scipen = 200)
+options(scipen = 200, prompt="R⟩ ")
 
 # silent load the packages
 silentLoad <- function(p) {
-  cat(paste("Loading package:", p, "\n"))
   suppressWarnings(suppressPackageStartupMessages(library(p, character.only = TRUE)))
 }
 
