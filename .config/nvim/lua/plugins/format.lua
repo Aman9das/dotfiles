@@ -8,7 +8,7 @@ return {
         ["python"] = { "black" },
         ["quarto"] = { "mdformat" },
         ["rmd"] = { "mdformat" },
-        ["md"] = { "mdformat" },
+        ["markdown"] = { "mdformat" },
         ["*"] = { "typos", "trim_whitespace", "trim_newlines" },
       },
       formatters = {

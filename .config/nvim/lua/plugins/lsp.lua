@@ -11,6 +11,7 @@ return {
         "r-languageserver",
         "pyright",
         "json-lsp",
+        "texlab",
       },
     },
   },
