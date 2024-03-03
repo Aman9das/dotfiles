@@ -17,16 +17,16 @@ function module.apply_to_config(config)
 	-- distroboxes
 	config.launch_menu = {
 		{
-			label = "New Tab (domain host)",
+			label = "New Tab",
 			args = { os.getenv("SHELL"), "-l" },
 		},
 		{
-			label = "New Tab (domain rbox)",
-			args = { "distrobox-enter", "rbox", "--", "zsh -l" },
+			label = "New RBox Tab",
+			args = { "distrobox-enter", "rbox", "--", os.getenv("SHELL"), "-l" },
 		},
 		{
-			label = "New Tab (domain box)",
-			args = { "distrobox-enter", "box", "--", "zsh -l" },
+			label = "New Box Tab ",
+			args = { "distrobox-enter", "box", "--", os.getenv("SHELL"), "-l" },
 		},
 	}
 
