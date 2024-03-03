@@ -60,7 +60,7 @@ zstyle ':z4h:ssh:*' send-extra-files '~/.nanorc' '~/.env.zsh'
 z4h init || return
 
 # Extend PATH.
-# export PATH=~/bin:~/.local/bin:$PATH
+export PATH=/home/linuxbrew/.linuxbrew/bin:~/bin:$PATH
 
 # Change $shell to zsh
 SHELL=zsh
