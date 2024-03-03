@@ -24,7 +24,7 @@ return {
         default_method = "slime", -- "molten" or "slime"
       },
       keymap = {
-        rename = "<leader>qR",
+        rename = "<leader>qr",
         format = "<leader>qf",
       },
     },
@@ -45,6 +45,11 @@ return {
 
   {
     "jmbuhr/otter.nvim",
+    dependencies = {
+      "hrsh7th/nvim-cmp", -- optional, for completion
+      "neovim/nvim-lspconfig",
+      "nvim-treesitter/nvim-treesitter",
+    },
     opts = {
       buffers = {
         set_filetype = true,
@@ -111,7 +116,7 @@ return {
         r_language_server = {},
         julials = {},
         marksman = {
-          -- also needs:
+          -- alsm needs:
           -- $home/.config/marksman/config.toml :
           -- [core]
           -- markdown.file_extensions = ["md", "markdown", "qmd"]
