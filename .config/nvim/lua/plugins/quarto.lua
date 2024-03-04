@@ -36,7 +36,7 @@ return {
       { "<c-cr>", "<Plug>SlimeRegionSend<cr>", mode = "v", desc = "send code chunk" },
       { "<cr>", "<Plug>SlimeRegionSend<cr>", mode = "v", desc = "send code chunk" },
       { "<leader>ct", desc = "terminal" },
-      { "<leader>ctr", ":split term://R<cr>", desc = "terminal: R" },
+      { "<leader>ctr", ":split term://radian<cr>", desc = "terminal: radian" },
       { "<leader>cti", ":split term://ipython<cr>", desc = "terminal: ipython" },
       { "<leader>ctp", ":split term://python<cr>", desc = "terminal: python" },
       { "<leader>ctj", ":split term://julia<cr>", desc = "terminal: julia" },
