@@ -18,8 +18,3 @@ silentLoad <- function(p) {
 .First <- function() {
   silentLoad("tidyverse")
 }
-
-# At session end
-.Last <- function() {
-  cat("Goodbye!\n")
-}
