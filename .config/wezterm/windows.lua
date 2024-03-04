@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local act = wezterm.action
 local colors = require("colors")
 
 local palette = colors.palette

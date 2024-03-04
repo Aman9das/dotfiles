@@ -4,6 +4,7 @@ local fonts = require("fonts")
 local windows = require("windows")
 local system = require("system")
 local launchers = require("launchers")
+local keymaps = require("keymaps")
 
 local config = {}
 
@@ -24,6 +25,9 @@ system.apply_to_config(config)
 
 -- launchers
 launchers.apply_to_config(config)
+
+-- keymaps
+keymaps.apply_to_config(config)
 
 -- startup
 require("startup")
