@@ -6,7 +6,8 @@ local({
 })
 
 # set scientific notation
-options(scipen = 200, prompt="R⟩ ")
+options(scipen = 200)
+# options(prompt = "R⟩ ")
 
 # silent load the packages
 silentLoad <- function(p) {
