@@ -13,12 +13,16 @@ return {
       },
       formatters = {
         rprettify = {
-          timeout_ms = 10000,
+          timeout_ms = nil,
           inherit = false,
           stdin = false,
           command = "rprettify",
           args = { "$FILENAME" },
         },
+      },
+      log_level = vim.log.levels.DEBUG,
+      format = {
+        timeout_ms = nil,
       },
     },
   },
