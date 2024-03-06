@@ -23,8 +23,8 @@ function module.apply_to_config(config)
 
 	-- window border
 	config.window_frame = {
-		border_left_width = "3px",
-		border_right_width = "3px",
+		border_left_width = "2px",
+		border_right_width = "2px",
 		border_bottom_height = "3px",
 		border_top_height = "3px",
 		border_left_color = palette.bright_black,
@@ -35,9 +35,9 @@ function module.apply_to_config(config)
 
 	-- terminal border
 	config.window_padding = {
-		left = "0cell",
-		right = "0cell",
-		top = "2px",
+		left = "3px",
+		right = "3px",
+		top = "1px",
 		bottom = "0cell",
 	}
 end
