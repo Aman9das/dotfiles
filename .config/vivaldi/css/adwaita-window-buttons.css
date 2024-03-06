@@ -6,6 +6,7 @@
   --windowButtonDiameter: 22px;
   --windowButtonSideMargins: 4px;
   --windowButtonContainerSideMargins: 8px;
+  --windowButtonCount: 1; /* number of buttons to display. */
   /* --- */
   --windowButtonTotalWidth: calc(
     (2 * var(--windowButtonSideMargins)) + var(--windowButtonDiameter)
@@ -33,8 +34,8 @@
 #browser.address-top .toolbar:has(.window-buttongroup.on-mainbar) {
   padding-right: calc(
     (
-        (3 * var(--windowButtonTotalWidth)) +
-          (2 * var(--windowButtonContainerSideMargins))
+        (var(--windowButtonCount) * var(--windowButtonTotalWidth)) +
+          (1 * var(--windowButtonContainerSideMargins))
       ) / var(--uiZoomLevel)
   ) !important;
 }
@@ -90,7 +91,19 @@
 #browser .window-buttongroup button.window-close:hover svg {
   background-color: #5e5c64 !important;
 }
+/* reduce right padding on close button */
 #browser .window-buttongroup button.window-close {
   padding-inline-end: 0 !important;
   width: var(--windowButtonTotalWidth) - var(--windowButtonSideMargins) !important;
+}
+
+/* hide unnecessary window buttons */
+#browser .window-buttongroup button.window-minimize {
+  display: none !important;
+}
+#browser .window-buttongroup button.window-maximize {
+  display: none !important;
+}
+#browser .window-buttongroup button.window-close {
+  /* display: none !important; */
 }

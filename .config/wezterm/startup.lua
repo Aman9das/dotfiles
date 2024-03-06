@@ -64,8 +64,8 @@ wezterm.on("update-right-status", function(window, pane)
 		table.insert(cells, hostname)
 	end
 
-	-- I like my date/time in this style: "08:14 PM, Wed Mar 3"
-	local date = wezterm.strftime("%I:%M %p, %a %b %-d")
+	-- I like my date/time in this style: "08:14 PM, Wed Mar 03"
+	local date = wezterm.strftime("%I:%M %p, %a %b %d")
 	table.insert(cells, date)
 
 	-- An entry for each battery (typically 0 or 1 battery)

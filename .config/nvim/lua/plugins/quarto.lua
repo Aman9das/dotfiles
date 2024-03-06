@@ -46,6 +46,7 @@ return {
 
   {
     "jmbuhr/otter.nvim",
+    lazy = true,
     dependencies = {
       "hrsh7th/nvim-cmp", -- optional, for completion
       "neovim/nvim-lspconfig",
@@ -71,6 +72,7 @@ return {
   -- like ipython, R, bash
   {
     "jpalardy/vim-slime",
+    lazy = true,
     init = function()
       vim.b["quarto_is_" .. "python" .. "_chunk"] = false
       Quarto_is_in_python_chunk = function()
@@ -171,6 +173,7 @@ return {
   -- paste an image from the clipboard or drag-and-drop
   {
     "HakonHarnes/img-clip.nvim",
+    lazy = true,
     event = "BufEnter",
     opts = {
       filetypes = {
@@ -189,6 +192,7 @@ return {
   -- preview equations
   {
     "jbyuki/nabla.nvim",
+    lazy = true,
     keys = {
       { "<leader>oE", ':lua require"nabla".toggle_virt()<cr>', "toggle equations" },
       { "<leader>oe", ':lua require"nabla".popup()<cr>', "hover equation" },
