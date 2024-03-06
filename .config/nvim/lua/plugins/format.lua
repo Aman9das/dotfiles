@@ -9,6 +9,7 @@ return {
         ["quarto"] = { "mdformat" },
         ["rmd"] = { "mdformat" },
         ["markdown"] = { "mdformat" },
+        ["css"] = { "prettierd" },
         ["*"] = { "typos", "trim_whitespace", "trim_newlines" },
       },
       formatters = {

@@ -12,6 +12,7 @@ return {
         "pyright",
         "json-lsp",
         "texlab",
+        "prettierd",
       },
     },
   },
