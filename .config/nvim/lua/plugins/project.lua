@@ -17,7 +17,7 @@ return {
       patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json" },
 
       -- Show hidden files in telescope
-      show_hidden = true,
+      show_hidden = false,
     },
   },
 }

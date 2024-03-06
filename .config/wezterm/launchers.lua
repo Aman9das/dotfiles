@@ -30,15 +30,6 @@ function module.apply_to_config(config)
 		},
 	}
 
-	-- keymap for launcher
-	config.keys = {
-		{
-			key = " ",
-			mods = "CTRL",
-			action = wezterm.action.ShowLauncher,
-		},
-	}
-
 	-- command palette
 	config.command_palette_font_size = 12.0
 	config.command_palette_fg_color = colors.palette.white

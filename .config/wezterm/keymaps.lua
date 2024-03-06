@@ -18,6 +18,11 @@ function module.apply_to_config(config)
 		{ key = "W", mods = "SHIFT|CTRL", action = act.CloseCurrentTab({ confirm = false }) },
 		{ key = "w", mods = "SHIFT|CTRL", action = act.CloseCurrentTab({ confirm = false }) },
 		{ key = "w", mods = "SUPER", action = act.CloseCurrentTab({ confirm = false }) },
+		{
+			key = " ",
+			mods = "CTRL",
+			action = wezterm.action.ShowLauncher,
+		},
 	}
 end
 
