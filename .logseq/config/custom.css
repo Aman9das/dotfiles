@@ -1,0 +1,16 @@
+@import url("https://playerofgames.github.io/logseq-mia-theme/fonts/sans.css");
+/* @import url("https://playerofgames.github.io/logseq-mia-theme/mia_quattro.css"); */
+@import url("https://playerofgames.github.io/logseq-mia-theme/mia_sans_compact.css");
+@import url("https://rsms.me/inter/inter.css");
+@import url("https://cdn.jsdelivr.net/gh/fonts-archive/IntelOneMono/IntelOneMono.css");
+
+:root {
+  --ls-font-family: Inter, sans-serif;
+  --title-font-family: Inter, sans-serif;
+  --code-font-family: "Intel One Mono";
+}
+@supports (font-variation-settings: normal) {
+  :root {
+    --ls-font-family: InterVariable, sans-serif;
+  }
+}

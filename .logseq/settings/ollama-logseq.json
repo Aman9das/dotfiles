@@ -1,0 +1,7 @@
+{
+  "host": "localhost:11434",
+  "model": "neural-chat:latest",
+  "shortcut": "mod+shift+o",
+  "custom_prompt_block": "Translate in French : ",
+  "disabled": false
+}
