@@ -2,15 +2,17 @@
 /* @import url("https://playerofgames.github.io/logseq-mia-theme/mia_quattro.css"); */
 @import url("https://playerofgames.github.io/logseq-mia-theme/mia_sans_compact.css");
 @import url("https://rsms.me/inter/inter.css");
+@import url("https://raw.githubusercontent.com/fontsource/font-files/main/fonts/other/clear-sans/latin.css");
+@import url("https://raw.githubusercontent.com/fontsource/font-files/main/fonts/other/clear-sans/latin.css");
 @import url("https://cdn.jsdelivr.net/gh/fonts-archive/IntelOneMono/IntelOneMono.css");
 
 :root {
-  --ls-font-family: Inter, sans-serif;
-  --title-font-family: Inter, sans-serif;
+  --ls-font-family: "Clear Sans", Inter, sans-serif;
+  --title-font-family: "Clear Sans", Inter, sans-serif;
   --code-font-family: "Intel One Mono";
 }
 @supports (font-variation-settings: normal) {
   :root {
-    --ls-font-family: InterVariable, sans-serif;
+    --ls-font-family: "Clear Sans", InterVariable, sans-serif;
   }
 }
