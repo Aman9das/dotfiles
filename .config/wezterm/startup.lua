@@ -60,7 +60,7 @@ wezterm.on("update-right-status", function(window, pane)
 			hostname = wezterm.hostname()
 		end
 
-		table.insert(cells, cwd)
+		-- table.insert(cells, cwd)
 		table.insert(cells, hostname)
 	end
 
@@ -81,7 +81,7 @@ wezterm.on("update-right-status", function(window, pane)
 	-- Color palette for the backgrounds of each cell
 	local colors = {
 		"#000000",
-		tomorrow.palette.black,
+		-- tomorrow.palette.black,
 		tomorrow.palette.bright_black,
     tomorrow.palette.dull_blue,
     tomorrow.palette.black,
@@ -89,7 +89,7 @@ wezterm.on("update-right-status", function(window, pane)
 
 	-- Foreground color for the text across the fade
 	local text_fg = {
-    tomorrow.palette.dull_white,
+    -- tomorrow.palette.dull_white,
     tomorrow.palette.white,
     tomorrow.palette.white,
     tomorrow.palette.black,

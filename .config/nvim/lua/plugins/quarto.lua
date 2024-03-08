@@ -15,6 +15,12 @@ return {
 
   {
     "quarto-dev/quarto-nvim",
+    dependencies = {
+      "jmbuhr/otter.nvim",
+      "hrsh7th/nvim-cmp",
+      "neovim/nvim-lspconfig",
+      "nvim-treesitter/nvim-treesitter",
+    },
     opts = {
       lspFeatures = {
         languages = { "r", "python", "julia", "bash", "html", "lua" },
@@ -24,7 +30,7 @@ return {
         default_method = "slime", -- "molten" or "slime"
       },
       keymap = {
-        rename = "<leader>qr",
+        rename = "<leader>qR",
         format = "<leader>qf",
       },
     },
@@ -72,7 +78,6 @@ return {
   -- like ipython, R, bash
   {
     "jpalardy/vim-slime",
-    lazy = true,
     init = function()
       vim.b["quarto_is_" .. "python" .. "_chunk"] = false
       Quarto_is_in_python_chunk = function()

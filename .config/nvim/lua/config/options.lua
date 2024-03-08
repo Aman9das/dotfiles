@@ -5,6 +5,14 @@
 vim.env.PATH = "~/.local/bin/:" .. vim.env.PATH
 vim.g.mapleader = " "
 
+-- case insensitive tab completion
 vim.opt.wildignorecase = true
+
+-- automatically load .nvim.lua
 vim.opt.exrc = true
+
+-- no hiding characters
 vim.opt.conceallevel = 0 -- No hiding special characters
+
+-- highlight character at 120
+vim.opt.colorcolumn = "120"

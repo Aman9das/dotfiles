@@ -1,0 +1,8 @@
+@import url("https://rsms.me/inter/inter.css");
+@import url("https://raw.githubusercontent.com/fontsource/font-files/main/fonts/other/clear-sans/latin.css");
+@import url("https://raw.githubusercontent.com/fontsource/font-files/main/fonts/other/clear-sans/latin.css");
+@import url("https://cdn.jsdelivr.net/gh/fonts-archive/IntelOneMono/IntelOneMono.css");
+
+* {
+  font-family: "Clear Sans", Inter, sans-serif;
+}
