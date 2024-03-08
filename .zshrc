@@ -59,6 +59,9 @@ zstyle ':z4h:ssh:*' send-extra-files '~/.nanorc' '~/.env.zsh'
 # perform network I/O must be done above. Everything else is best done below.
 z4h init || return
 
+# Extend fpath
+fpath=($HOME/.local/share/zsh/site-functions/ $fpath)
+
 # Extend PATH.
 export PATH=/home/linuxbrew/.linuxbrew/bin:~/bin:$PATH
 
@@ -99,6 +102,8 @@ autoload -Uz zmv
 # Define functions and completions.
 function md() { [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1" }
 compdef _directories md
+eval "$(bws completions zsh); compdef _bw bw;"
+eval "$(bw completion --shell zsh); compdef _bw bw;"
 
 # Define named directories: ~w <=> Windows home directory on WSL.
 [[ -z $z4h_win_home ]] || hash -d w=$z4h_win_home

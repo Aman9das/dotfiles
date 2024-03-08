@@ -218,7 +218,7 @@
  ;; The "NEXT" query returns tasks with "NOW", "LATER", or "TODO" status.
  :default-queries
  {:journals
-  [{:title "🔨 NOW"
+  [{:title "NOW"
     :query [:find (pull ?h [*])
             :in $ ?start ?today
             :where
@@ -236,7 +236,7 @@
     :group-by-page? false
     :collapsed? false}
    
-{:title "🔥 OVERDUE"
+{:title "OVERDUE"
   :query [
     :find (pull ?b [*])
     :in $ ?start ?today
@@ -251,7 +251,7 @@
   :inputs [:-56d :today]
   :collapsed? false}
    
-   {:title "📅 NEXT"
+   {:title "NEXT"
     :query [:find (pull ?h [*])
             :in $ ?start ?next
             :where
