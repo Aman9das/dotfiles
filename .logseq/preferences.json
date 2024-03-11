@@ -11,15 +11,7 @@
       "group-first": true,
       "group-desc": "light themes"
     },
-    "dark": {
-      "name": "Default Dark Theme",
-      "url": null,
-      "description": "Logseq default dark theme.",
-      "mode": "dark",
-      "selected": true,
-      "group-first": true,
-      "group-desc": "dark themes"
-    }
+    "dark": null
   },
   "externals": [],
   "pinnedToolbarItems": [
