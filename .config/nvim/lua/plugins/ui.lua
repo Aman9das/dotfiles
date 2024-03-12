@@ -6,6 +6,13 @@ return {
         section_separators = "",
         component_separators = "",
       },
+      sections = {
+        lualine_z = {
+          function()
+            return "󰔟 " .. os.date("%I:%M %p")
+          end,
+        },
+      },
     },
   },
   {
