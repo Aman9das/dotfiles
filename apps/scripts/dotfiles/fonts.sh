@@ -21,6 +21,9 @@ download_and_extract_fonts_from_url() {
 	local url=$1
 	local pattern=$2
 	local font_dir=$3
+
+	mkdir -p "$font_dir"
+
 	local filename=$(basename "$url")
 
 	echo "Downloading $pattern from $url..."
@@ -47,6 +50,8 @@ download_and_extract_fonts_from_repo() {
 	local pattern=$2
 	local font_dir=$3
 
+	mkdir -p "$font_dir"
+
 	echo "Downloading $pattern from $repo..."
 	gh release download -R "$repo" -p "$pattern" -D /tmp
 	if [ $? -ne 0 ]; then
@@ -65,12 +70,11 @@ download_and_extract_fonts_from_repo() {
 	rm /tmp/"$pattern"
 }
 
-# Ensure the font directories exist
-mkdir -p ~/.local/share/fonts/clear-sans
-mkdir -p ~/.local/share/fonts/intel-one-mono
-
 # Download and extract Clear Sans font
 download_and_extract_fonts_from_url "https://api.fontsource.org/v1/download/clear-sans" "clear-sans.zip" ~/.local/share/fonts/clear-sans
+
+# Download and extract Clear Sans font
+download_and_extract_fonts_from_url "https://api.fontsource.org/v1/download/cantarell" "cantarell.zip" ~/.local/share/fonts/cantarell
 
 # Download and extract Intel One Mono Nerd Font
 download_and_extract_fonts_from_repo "ryanoasis/nerd-fonts" "IntelOneMono.zip" ~/.local/share/fonts/intel-one-mono

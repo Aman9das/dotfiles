@@ -8,6 +8,7 @@ local({
 # set scientific notation
 options(scipen = 200)
 # options(prompt = "R⟩ ")
+# options(width = 120)
 
 # silent load the packages
 silentLoad <- function(p) {
@@ -16,5 +17,5 @@ silentLoad <- function(p) {
 
 # At session startup
 .First <- function() {
-  silentLoad("tidyverse")
+  # silentLoad("tidyverse")
 }
