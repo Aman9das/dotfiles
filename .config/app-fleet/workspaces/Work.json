@@ -1,0 +1,47 @@
+{
+  "name": "Work",
+  "icon": "assets/icons/picker/space.png",
+  "default-workspace": 0,
+  "apps": [
+    {
+      "name": "Vivaldi",
+      "icon": "",
+      "exe": "flatpak run com.vivaldi.Vivaldi",
+      "wait-time": 5000,
+      "priority": 2,
+      "internally-generated": false
+    },
+    {
+      "name": "Logseq",
+      "icon": "",
+      "exe": "flatpak run com.logseq.Logseq",
+      "wait-time": 5000,
+      "priority": 0,
+      "internally-generated": false
+    },
+    {
+      "name": "Newsflash",
+      "icon": "",
+      "exe": "flatpak run io.gitlab.news_flash.NewsFlash",
+      "wait-time": 5000,
+      "priority": 4,
+      "internally-generated": false
+    },
+    {
+      "name": "WezTerm",
+      "icon": "",
+      "exe": "wezterm",
+      "wait-time": 1500,
+      "priority": 1,
+      "internally-generated": false
+    },
+    {
+      "name": "Files",
+      "icon": "/var/home/aman/.local/share/icons/Papirus-Light/128x128/apps/org.gnome.Nautilus.svg",
+      "exe": "nautilus",
+      "wait-time": 1500,
+      "priority": 3,
+      "internally-generated": false
+    }
+  ]
+}
