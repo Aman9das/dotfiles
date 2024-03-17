@@ -26,15 +26,15 @@ download_and_extract_fonts_from_url() {
 
 	local filename=$(basename "$url")
 
-	echo "Downloading $pattern from $url..."
+	echo "Downloading from $url..."
 	curl -L -o "/tmp/$filename" "$url"
 	if [ $? -ne 0 ]; then
-		echo "Failed to download $pattern from $url."
+		echo "Failed to download from $url."
 		exit 1
 	fi
 
 	echo "Extracting $pattern to $font_dir..."
-	unzip -j "/tmp/$filename" '*' -d "$font_dir"
+	unzip -j "/tmp/$filename" "$pattern" -d "$font_dir" -n
 	if [ $? -ne 0 ]; then
 		echo "Failed to extract $pattern to $font_dir."
 		exit 1
@@ -53,14 +53,14 @@ download_and_extract_fonts_from_repo() {
 	mkdir -p "$font_dir"
 
 	echo "Downloading $pattern from $repo..."
-	gh release download -R "$repo" -p "$pattern" -D /tmp
+	gh release download -R "$repo" -p "$pattern" -D /tmp --clobber
 	if [ $? -ne 0 ]; then
 		echo "Failed to download $pattern from $repo."
 		exit 1
 	fi
 
 	echo "Extracting $pattern to $font_dir..."
-	unzip -j /tmp/"$pattern" '*' -d "$font_dir"
+	unzip -j /tmp/"$pattern" '*' -d "$font_dir" -n
 	if [ $? -ne 0 ]; then
 		echo "Failed to extract $pattern to $font_dir."
 		exit 1
@@ -71,10 +71,13 @@ download_and_extract_fonts_from_repo() {
 }
 
 # Download and extract Clear Sans font
-download_and_extract_fonts_from_url "https://api.fontsource.org/v1/download/clear-sans" "clear-sans.zip" ~/.local/share/fonts/clear-sans
+download_and_extract_fonts_from_url "https://api.fontsource.org/v1/download/clear-sans" "*" ~/.local/share/fonts/clear-sans
 
 # Download and extract Clear Sans font
-download_and_extract_fonts_from_url "https://api.fontsource.org/v1/download/cantarell" "cantarell.zip" ~/.local/share/fonts/cantarell
+download_and_extract_fonts_from_url "https://api.fontsource.org/v1/download/cantarell" "*" ~/.local/share/fonts/cantarell
+
+# Download and extract Work Sans font
+download_and_extract_fonts_from_url "https://github.com/weiweihuanghuang/Work-Sans/archive/master.zip" "*wght*.ttf" ~/.local/share/fonts/work-sans
 
 # Download and extract Intel One Mono Nerd Font
 download_and_extract_fonts_from_repo "ryanoasis/nerd-fonts" "IntelOneMono.zip" ~/.local/share/fonts/intel-one-mono

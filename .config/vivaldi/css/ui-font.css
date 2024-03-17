@@ -1,9 +1,16 @@
-/* @import url("https://rsms.me/inter/inter.css"); */
-/* @import url("https://raw.githubusercontent.com/fontsource/font-files/main/fonts/other/clear-sans/latin.css"); */
+/* @import url("https://rsms.me/inter/inter.css");
+@import url("https://raw.githubusercontent.com/fontsource/font-files/main/fonts/other/clear-sans/latin.css");
 @import url("https://raw.githubusercontent.com/fontsource/font-files/main/fonts/google/cantarell/latin.css");
 @import url("https://raw.githubusercontent.com/fontsource/font-files/main/fonts/google/cantarell/latin-italic.css");
-/* @import url("https://cdn.jsdelivr.net/gh/fonts-archive/IntelOneMono/IntelOneMono.css"); */
+@import url("https://cdn.jsdelivr.net/gh/fonts-archive/IntelOneMono/IntelOneMono.css"); */
+
+@import url("https://weiweihuanghuang.github.io/Work-Sans/worksanswebfonts.css");
 
 * {
-  font-family: "Cantarell", "Clear Sans", Inter, sans-serif;
+  font-family: "worksansregular", "Cantarell", "Clear Sans", Inter, sans-serif !important;
+  font-feature-settings:
+    "tnum",
+    "kern" 1,
+    "liga" 1,
+    "ss01" 1 !important;
 }
