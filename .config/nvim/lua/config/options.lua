@@ -9,7 +9,7 @@ vim.g.mapleader = " "
 vim.opt.wildignorecase = true
 
 -- automatically load .nvim.lua
-vim.opt.exrc = true
+vim.opt_global.exrc = true
 
 -- no hiding characters
 vim.opt.conceallevel = 0 -- No hiding special characters
