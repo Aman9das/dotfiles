@@ -5,6 +5,26 @@ command_exists() {
 	command -v "$1" >/dev/null 2>&1
 }
 
+# Function to ask for user confirmation
+confirm() {
+	local message=$1
+	local response
+
+	if [ "$force_yes" = true ]; then
+		return 0
+	fi
+
+	read -r -p "$message [y/N] " response
+	case "$response" in
+	[yY][eE][sS] | [yY])
+		return 0
+		;;
+	*)
+		return 1
+		;;
+	esac
+}
+
 # Ensure gh (GitHub CLI) is installed
 if ! command_exists gh; then
 	echo "GitHub CLI (gh) is not installed. Attempting to install it..."
@@ -70,16 +90,43 @@ download_and_extract_fonts_from_repo() {
 	rm /tmp/"$pattern"
 }
 
-# Download and extract Clear Sans font
-download_and_extract_fonts_from_url "https://api.fontsource.org/v1/download/clear-sans" "*" ~/.local/share/fonts/clear-sans
+# Parse command-line options
+force_yes=false
+while getopts ":y" opt; do
+	case $opt in
+	y)
+		force_yes=true
+		;;
+	\?)
+		echo "Invalid option: -$OPTARG" >&2
+		exit 1
+		;;
+	esac
+done
+
+# Download and install Inter fonts from GitHub
+if confirm "Download and install Inter fonts from GitHub?"; then
+	download_and_extract_fonts_from_repo "rsms/inter" "Inter*.zip" ~/.local/share/fonts/inter
+fi
 
 # Download and extract Clear Sans font
-download_and_extract_fonts_from_url "https://api.fontsource.org/v1/download/cantarell" "*" ~/.local/share/fonts/cantarell
+if confirm "Download and extract Clear Sans font?"; then
+	download_and_extract_fonts_from_url "https://api.fontsource.org/v1/download/clear-sans" "*" ~/.local/share/fonts/clear-sans
+fi
+
+# Download and extract Cantarell font
+if confirm "Download and extract Cantarell font?"; then
+	download_and_extract_fonts_from_url "https://api.fontsource.org/v1/download/cantarell" "*" ~/.local/share/fonts/cantarell
+fi
 
 # Download and extract Work Sans font
-download_and_extract_fonts_from_url "https://github.com/weiweihuanghuang/Work-Sans/archive/master.zip" "*wght*.ttf" ~/.local/share/fonts/work-sans
+if confirm "Download and extract Work Sans font?"; then
+	download_and_extract_fonts_from_url "https://github.com/weiweihuanghuang/Work-Sans/archive/master.zip" "*wght*.ttf" ~/.local/share/fonts/work-sans
+fi
 
 # Download and extract Intel One Mono Nerd Font
-download_and_extract_fonts_from_repo "ryanoasis/nerd-fonts" "IntelOneMono.zip" ~/.local/share/fonts/intel-one-mono
+if confirm "Download and extract Intel One Mono Nerd Font?"; then
+	download_and_extract_fonts_from_repo "ryanoasis/nerd-fonts" "IntelOneMono.zip" ~/.local/share/fonts/intel-one-mono
+fi
 
 echo "Fonts downloaded and extracted successfully."

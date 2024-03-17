@@ -4,13 +4,17 @@
 @import url("https://raw.githubusercontent.com/fontsource/font-files/main/fonts/google/cantarell/latin-italic.css");
 @import url("https://cdn.jsdelivr.net/gh/fonts-archive/IntelOneMono/IntelOneMono.css"); */
 
-@import url("https://weiweihuanghuang.github.io/Work-Sans/worksanswebfonts.css");
+/* @import url("https://weiweihuanghuang.github.io/Work-Sans/worksanswebfonts.css"); */
+@import url("https://rsms/inter/inter.css");
 
 * {
-  font-family: "worksansregular", "Cantarell", "Clear Sans", Inter, sans-serif !important;
+  font-family: Inter, "worksansregular", "Cantarell", "Clear Sans", sans-serif !important;
   font-feature-settings:
+    "calt",
     "tnum",
+    "case",
+    "ccmp",
     "kern" 1,
     "liga" 1,
-    "ss01" 1 !important;
+    "ss04" 1 !important;
 }
