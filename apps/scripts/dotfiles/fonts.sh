@@ -109,6 +109,11 @@ if confirm "Download and install Inter fonts from GitHub?"; then
 	download_and_extract_fonts_from_repo "rsms/inter" "Inter*.zip" ~/.local/share/fonts/inter
 fi
 
+# Download and install Domine font from GitHub
+if confirm "Download and install Domine Font from url?"; then
+	download_and_extract_fonts_from_url "https://github.com/googlefonts/Domine/archive/refs/heads/main.zip" "*wght*" ~/.local/share/fonts/domine
+fi
+
 # Download and extract Clear Sans font
 if confirm "Download and extract Clear Sans font?"; then
 	download_and_extract_fonts_from_url "https://api.fontsource.org/v1/download/clear-sans" "*" ~/.local/share/fonts/clear-sans
