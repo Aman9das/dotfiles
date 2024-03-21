@@ -26,6 +26,7 @@ return {
       { "L3MON4D3/LuaSnip" },
       { "rafamadriz/friendly-snippets" },
       { "onsails/lspkind-nvim" },
+      { "jmbuhr/otter.nvim" },
     },
     opts = function(_, opts)
       local cmp = require("cmp")
@@ -36,7 +37,12 @@ return {
       local has_words_before = function()
         unpack = unpack or table.unpack
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+        return col ~= 0
+          and vim.api
+              .nvim_buf_get_lines(0, line - 1, line, true)[1]
+              :sub(col, col)
+              :match("%s")
+            == nil
       end
 
       -- setup supertab in cmp
@@ -92,7 +98,9 @@ return {
       -- for friendly snippets
       require("luasnip.loaders.from_vscode").lazy_load()
       -- for custom snippets
-      require("luasnip.loaders.from_vscode").lazy_load({ paths = { vim.fn.stdpath("config") .. "/snips" } })
+      require("luasnip.loaders.from_vscode").lazy_load({
+        paths = { vim.fn.stdpath("config") .. "/snips" },
+      })
       -- link quarto and rmarkdown to markdown snippets
       luasnip.filetype_extend("quarto", { "markdown" })
       luasnip.filetype_extend("rmarkdown", { "markdown" })
