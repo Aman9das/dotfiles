@@ -102,7 +102,7 @@ autoload -Uz zmv
 function md() { [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1" }
 compdef _directories md
 eval "$(bws completions zsh); compdef _bw bw;"
-eval "$(bw completion --shell zsh); compdef _bw bw;"
+eval "$(cat .config/zsh/bw); compdef _bw bw;"
 
 # Define named directories: ~w <=> Windows home directory on WSL.
 [[ -z $z4h_win_home ]] || hash -d w=$z4h_win_home
