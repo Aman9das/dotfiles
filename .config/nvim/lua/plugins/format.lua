@@ -1,23 +1,13 @@
 return {
   {
     "stevearc/conform.nvim",
-    keys = {
-      {
-        "<leader>cF",
-        function()
-          require("conform").format({ formatters = { "injected" }, timeout_ms = 3000 })
-        end,
-        mode = { "n", "v" },
-        desc = "Format Injected Langs",
-      },
-    },
     opts = {
       formatters_by_ft = {
         -- r formatter
         ["r"] = { "rprettify" },
         ["python"] = { "black" },
-        ["quarto"] = { "rprettify", "mdformat" },
-        ["rmd"] = { "rprettify", "mdformat" },
+        ["quarto"] = { "mdformat" },
+        ["rmd"] = { "mdformat" },
         ["markdown"] = { "mdformat" },
         ["css"] = { "prettierd" },
         ["*"] = { "typos", "trim_whitespace", "trim_newlines" },
@@ -29,11 +19,36 @@ return {
           command = "rprettify",
           args = { "$FILENAME" },
         },
+        injected = {
+          -- Set the options field
+          options = {
+            -- Set to true to ignore errors
+            ignore_errors = false,
+            -- Map of treesitter language to file extension
+            -- A temporary file name with this extension will be generated during formatting
+            -- because some formatters care about the filename.
+            lang_to_ext = {
+              bash = "sh",
+              c_sharp = "cs",
+              elixir = "exs",
+              javascript = "js",
+              julia = "jl",
+              latex = "tex",
+              markdown = "md",
+              python = "py",
+              ruby = "rb",
+              rust = "rs",
+              teal = "tl",
+              r = "r",
+              typescript = "ts",
+            },
+            -- Map of treesitter language to formatters to use
+            -- (defaults to the value from formatters_by_ft)
+            lang_to_formatters = {},
+          },
+        },
       },
       log_level = vim.log.levels.DEBUG,
-      format = {
-        timeout_ms = 10000,
-      },
     },
   },
 }
