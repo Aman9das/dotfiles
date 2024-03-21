@@ -9,10 +9,6 @@
 
 return {
 
-  -- this taps into vim.ui.select and vim.ui.input
-  -- and in doing so currently breaks renaming in otter.nvim
-  { "stevearc/dressing.nvim", enabled = false },
-
   {
     "quarto-dev/quarto-nvim",
     dependencies = {
@@ -122,65 +118,6 @@ return {
         ["<leader>cS"] = { set_terminal, "set terminal" },
       })
     end,
-  },
-
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        pyright = {},
-        r_language_server = {},
-        julials = {},
-        marksman = {
-          -- alsm needs:
-          -- $home/.config/marksman/config.toml :
-          -- [core]
-          -- markdown.file_extensions = ["md", "markdown", "qmd"]
-          filetypes = { "markdown", "quarto" },
-          root_dir = require("lspconfig.util").root_pattern(".git", ".marksman.toml", "_quarto.yml"),
-        },
-      },
-    },
-  },
-
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "bash",
-        "c",
-        "html",
-        "javascript",
-        "json",
-        "lua",
-        "luadoc",
-        "luap",
-        "markdown",
-        "markdown_inline",
-        "python",
-        "query",
-        "regex",
-        "tsx",
-        "typescript",
-        "vim",
-        "vimdoc",
-        "yaml",
-        "bash",
-        "html",
-        "css",
-        "javascript",
-        "json",
-        "lua",
-        "markdown",
-        "markdown_inline",
-        "python",
-        "vim",
-        "yaml",
-        "python",
-        "julia",
-        "r",
-      },
-    },
   },
 
   -- paste an image from the clipboard or drag-and-drop
