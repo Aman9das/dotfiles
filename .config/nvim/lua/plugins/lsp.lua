@@ -37,6 +37,10 @@ return {
 
         julials = {},
 
+        bashls = {
+          filetypes = { "sh", "bash", "zsh" },
+        },
+
         cssls = {},
 
         html = {},

@@ -44,7 +44,7 @@ zstyle ':z4h:ssh:*'                   enable 'no'
 
 # Send these files over to the remote host when connecting over SSH to the
 # enabled hosts.
-zstyle ':z4h:ssh:*' send-extra-files '~/.nanorc' '~/.env.zsh'
+zstyle ':z4h:ssh:*' send-extra-files "$HOME/.nanorc" "$HOME/.env.zsh"
 
 # Clone additional Git repositories from GitHub.
 #
@@ -99,13 +99,15 @@ z4h bindkey z4h-cd-down    Alt+Down   # cd into a child directory
 autoload -Uz zmv
 
 # Define functions and completions.
-function md() { [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1" }
+function md() {
+  [[ $# == 1 ]] && mkdir -p -- "$1" && ( cd -- "$1" || return )
+}
 compdef _directories md
 eval "$(bws completions zsh); compdef _bw bw;"
 eval "$(cat .config/zsh/bw); compdef _bw bw;"
 
 # Define named directories: ~w <=> Windows home directory on WSL.
-[[ -z $z4h_win_home ]] || hash -d w=$z4h_win_home
+[[ -z "$z4h_win_home" ]] || hash -d w="$z4h_win_home"
 
 # Define aliases.
 alias tree='tree -a -I .git'
