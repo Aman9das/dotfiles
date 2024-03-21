@@ -15,4 +15,4 @@ vim.opt_global.exrc = true
 vim.opt.conceallevel = 0 -- No hiding special characters
 
 -- highlight character at 120
-vim.opt.colorcolumn = "120"
+vim.opt.colorcolumn = "80"
