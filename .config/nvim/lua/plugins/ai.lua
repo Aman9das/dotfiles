@@ -16,8 +16,8 @@ return {
 
       -- CLI
       backend = "openai",
-      model = "mixtral-8x7b-32768",
-      -- theme_file = "~/.config/oatmeal/base16-tomorrow-night.tmTheme",
+      model = "llama2-70b-4096",
+      theme_file = "~/.config/oatmeal/base16-tomorrow-night.tmTheme",
       -- ollama_url = os.getenv("OLLAMA_API_HOST") or "http://localhost:11434",
       -- open_ai_url = os.getenv("OPENAI_API_HOST") or "https://api.openai.com",
       -- open_ai_token = os.getenv("OPENAI_API_KEY") or "",
@@ -39,13 +39,12 @@ return {
           -- api_host = os.getenv("OLLAMA_API_HOST") or "http://localhost:11434",
           -- api_key = os.getenv("OLLAMA_API_KEY") or "",
           model = {
-            name = "deepseek-coder:6.7b",
-            system_message = nil,
+            name = "mistral",
           },
         },
         openai = {
           model = {
-            name = "mixtral-8x7b-32768",
+            name = "undi95/toppy-m-7b:free",
           },
         },
       },
@@ -76,7 +75,7 @@ return {
 
     opts = {
       openai_params = {
-        model = "mixtral-8x7b-32768",
+        model = "undi95/toppy-m-7b:free",
         frequency_penalty = 0,
         presence_penalty = 0,
         max_tokens = 4096,
