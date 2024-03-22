@@ -1,3 +1,4 @@
 .logseq/plugins/logseq-mia-theme
 .config/oatmeal/debug.log
 .config/oatmeal/sessions
+.config/environment.d/920-oatmeal.conf
