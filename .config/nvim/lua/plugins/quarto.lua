@@ -108,21 +108,26 @@ return {
       Quarto_is_in_python_chunk = function()
         require("otter.tools.functions").is_otter_language_context("python")
       end
+      vim.b["quarto_is_" .. "r" .. "_chunk"] = false
+      Quarto_is_in_r_chunk = function()
+        require("otter.tools.functions").is_otter_language_context("r")
+      end
 
       vim.cmd([[
       let g:slime_dispatch_ipython_pause = 100
       function SlimeOverride_EscapeText_quarto(text)
       call v:lua.Quarto_is_in_python_chunk()
+      call v:lua.Quarto_is_in_r_chunk()
+
       if exists('g:slime_python_ipython') && len(split(a:text,"\n")) > 1 && b:quarto_is_python_chunk && !(exists('b:quarto_is_r_mode') && b:quarto_is_r_mode)
       return ["%cpaste -q\n", g:slime_dispatch_ipython_pause, a:text, "--", "\n"]
-      else
-      if exists('b:quarto_is_r_mode') && b:quarto_is_r_mode && b:quarto_is_python_chunk
+      elseif len(split(a:text,"\n")) > 1 && b:quarto_is_r_chunk
       call system("cat > ~/.slime_r", a:text)
       return ["source('~/.slime_r', echo = TRUE, max.deparse.length = 4095)\r"]
       else
       return [a:text]
       end
-      end
+
       endfunction
       ]])
 
