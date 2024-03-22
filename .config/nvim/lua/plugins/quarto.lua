@@ -137,6 +137,7 @@ return {
     config = function()
       local function mark_terminal()
         vim.g.slime_last_channel = vim.b.terminal_job_id
+        print("terminal job id: " .. vim.b.terminal_job_id)
       end
 
       local function set_terminal()
