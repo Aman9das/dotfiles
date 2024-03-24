@@ -130,4 +130,6 @@ compinit
 # End of lines added by compinstall
 
 # zoxide initialization
-eval "$(zoxide init --cmd cd zsh)"
+if command -v zoxide &> /dev/null; then
+    eval "$(zoxide init --cmd cd zsh)"
+fi
