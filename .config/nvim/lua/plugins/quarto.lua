@@ -41,23 +41,23 @@ return {
       "jmbuhr/otter.nvim",
     },
     keys = {
-      { "<leader><cr>", ":SlimeSend<cr>", desc = "send code chunk" },
-      { "<c-cr>", ":SlimeSend<cr>", desc = "send code chunk" },
+      { "<leader><cr>", ":QuartoSend<cr>", desc = "send code chunk" },
+      { "<c-cr>", ":QuartoSend<cr>", desc = "send code chunk" },
       {
         "<c-cr>",
-        "<esc>:SlimeSend<cr>i",
+        "<esc>:QuartoSend<cr>a",
         mode = "i",
         desc = "send code chunk",
       },
       {
         "<c-cr>",
-        "<Plug>SlimeRegionSend<cr>",
+        "<Plug>SlimeSend<cr>",
         mode = "v",
         desc = "send code chunk",
       },
       {
         "<cr>",
-        "<Plug>SlimeRegionSend<cr>",
+        "<Plug>SlimeSend<cr>",
         mode = "v",
         desc = "send code chunk",
       },

@@ -99,10 +99,6 @@ z4h bindkey z4h-cd-down    Alt+Down   # cd into a child directory
 autoload -Uz zmv
 
 # Define functions and completions.
-function md() {
-  [[ $# == 1 ]] && mkdir -p -- "$1" && ( cd -- "$1" || return )
-}
-compdef _directories md
 eval "$(bws completions zsh); compdef _bws bws;"
 eval "$(cat ~/.config/zsh/bw); compdef _bw bw;"
 

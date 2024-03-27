@@ -9,16 +9,10 @@ vim.keymap.set(
 )
 vim.keymap.set(
   "n",
-  "<leader>qP",
+  "<leader>qp",
   ":lua require'quarto'.quartoPreview()<cr>",
   { desc = "quarto preview" }
 ) -- preview the recently modified file.
-vim.keymap.set(
-  "n",
-  "<leader>qp",
-  ":QuartoPreview %<cr>",
-  { desc = "quarto preview current file" }
-)
 vim.keymap.set(
   "n",
   "<leader>qc",
@@ -40,6 +34,12 @@ vim.keymap.set(
 )
 vim.keymap.set(
   "n",
+  "<leader>qrr",
+  ":QuartoSend<cr>",
+  { desc = "quarto run cell" }
+)
+vim.keymap.set(
+  "v",
   "<leader>qrr",
   ":QuartoSendRange<cr>",
   { desc = "quarto run range" }
@@ -103,9 +103,32 @@ local insert_py_chunk = function()
   insert_code_chunk("python")
 end
 
+local insert_lua_chunk = function()
+  insert_code_chunk("lua")
+end
+
+local insert_julia_chunk = function()
+  insert_code_chunk("julia")
+end
+
+local insert_bash_chunk = function()
+  insert_code_chunk("bash")
+end
+
+local insert_ojs_chunk = function()
+  insert_code_chunk("ojs")
+end
+
 -- normal mode
 wk.register({
   ["<m-i>"] = { insert_r_chunk, "r code chunk" },
   ["<cm-i>"] = { insert_py_chunk, "python code chunk" },
   ["<m-I>"] = { insert_py_chunk, "python code chunk" },
 }, { mode = "n", silent = true })
+
+-- insert mode
+wk.register({
+  ["<m-i>"] = { insert_r_chunk, "r code chunk" },
+  ["<cm-i>"] = { insert_py_chunk, "python code chunk" },
+  ["<m-I>"] = { insert_py_chunk, "python code chunk" },
+}, { mode = "i" })

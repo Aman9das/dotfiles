@@ -6,8 +6,8 @@ return {
         -- r formatter
         ["r"] = { "rprettify" },
         ["python"] = { "black" },
-        ["quarto"] = { "injected", "mdformat" },
-        ["rmd"] = { "injected", "mdformat" },
+        ["quarto"] = { "mdformat" },
+        ["rmd"] = { "mdformat" },
         ["markdown"] = { "mdformat" },
         ["css"] = { "prettierd" },
         ["*"] = { "typos", "trim_whitespace", "trim_newlines" },
