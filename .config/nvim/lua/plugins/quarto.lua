@@ -121,9 +121,6 @@ return {
 
       if exists('g:slime_python_ipython') && len(split(a:text,"\n")) > 1 && b:quarto_is_python_chunk && !(exists('b:quarto_is_r_mode') && b:quarto_is_r_mode)
       return ["%cpaste -q\n", g:slime_dispatch_ipython_pause, a:text, "--", "\n"]
-      elseif len(split(a:text,"\n")) > 1 && b:quarto_is_r_chunk
-      call system("cat > ~/.slime_r", a:text)
-      return ["source('~/.slime_r', echo = TRUE, max.deparse.length = 4095)\r"]
       else
       return [a:text]
       end

@@ -6,7 +6,10 @@ options(radian.color_scheme = "lightbulb")
 
 # either  `"emacs"` (default) or `"vi"`.
 options(radian.editing_mode = "vi")
-#
+
+# auto match brackets and quotes
+options(radian.auto_match = FALSE)
+
 # highlight matching bracket
 options(radian.highlight_matching_bracket = TRUE)
 
