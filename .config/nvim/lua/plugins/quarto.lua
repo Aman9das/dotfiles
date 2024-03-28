@@ -61,20 +61,6 @@ return {
         mode = "v",
         desc = "send code chunk",
       },
-      { "<leader>ct", desc = "terminal" },
-      { "<leader>ctR", ":vsplit term://R<cr>", desc = "terminal: R" },
-      {
-        "<leader>ctr",
-        ":vs term://radian --profile=~/.config/nvim/extras/.radian_profile<cr>",
-        desc = "terminal: radian",
-      },
-      {
-        "<leader>cti",
-        ":vsplit term://ipython<cr>",
-        desc = "terminal: ipython",
-      },
-      { "<leader>ctp", ":vsplit term://python<cr>", desc = "terminal: python" },
-      { "<leader>ctj", ":vsplit term://julia<cr>", desc = "terminal: julia" },
     },
   },
 
