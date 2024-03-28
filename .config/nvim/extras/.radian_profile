@@ -11,7 +11,7 @@ options(radian.color_scheme = "lightbulb")
 options(radian.auto_match = FALSE)
 
 # pop up completion while typing
-# options(radian.complete_while_typing = FALSE)
+options(radian.complete_while_typing = FALSE)
 
 # highlight matching bracket
 options(radian.highlight_matching_bracket = TRUE)

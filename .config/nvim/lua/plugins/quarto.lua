@@ -63,7 +63,11 @@ return {
       },
       { "<leader>ct", desc = "terminal" },
       { "<leader>ctR", ":vsplit term://R<cr>", desc = "terminal: R" },
-      { "<leader>ctr", ":vsplit term://radian<cr>", desc = "terminal: radian" },
+      {
+        "<leader>ctr",
+        ":vs term://radian --profile=~/.config/nvim/extras/.radian_profile<cr>",
+        desc = "terminal: radian",
+      },
       {
         "<leader>cti",
         ":vsplit term://ipython<cr>",
