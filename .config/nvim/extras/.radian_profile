@@ -17,5 +17,5 @@ options(radian.complete_while_typing = FALSE)
 options(radian.highlight_matching_bracket = TRUE)
 
 # auto indentation for new line and curly braces
-options(radian.auto_indentation = TRUE)
+options(radian.auto_indentation = FALSE)
 options(radian.tab_size = 2)
