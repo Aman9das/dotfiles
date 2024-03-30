@@ -27,7 +27,7 @@ return {
   -- OGPT configuration
   {
     "huynle/ogpt.nvim",
-    enabled = true,
+    enabled = false,
     event = "VeryLazy",
     keys = {
       { "<leader>og", ":OGPT<CR>", desc = "OGPT" },

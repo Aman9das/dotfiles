@@ -73,6 +73,7 @@ export GPG_TTY=$TTY
 
 # Source additional local files if they exist.
 # z4h source ~/.env.sh
+z4h source ~/.config/zsh/alias.zsh
 
 # Use additional Git repositories pulled in with `z4h install`.
 #
