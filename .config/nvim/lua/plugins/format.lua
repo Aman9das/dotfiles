@@ -10,6 +10,7 @@ return {
         ["rmd"] = { "mdformat" },
         ["markdown"] = { "mdformat" },
         ["css"] = { "prettierd" },
+        ["yaml"] = { "prettierd" },
         ["*"] = { "typos", "trim_whitespace", "trim_newlines" },
       },
       formatters = {
