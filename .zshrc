@@ -30,6 +30,9 @@ zstyle ':z4h:autosuggestions' forward-char 'partial-accept'
 # Recursively traverse directories when TAB-completing files.
 zstyle ':z4h:fzf-complete' recurse-dirs 'no'
 
+# fzf highlight style
+zstyle ':z4h:*' fzf-flags '--color=hl:2,hl+:3,pointer:6'
+
 # Enable direnv to automatically source .envrc files.
 zstyle ':z4h:direnv'         enable 'no'
 # Show "loading" and "unloading" notifications from direnv.
