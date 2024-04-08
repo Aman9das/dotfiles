@@ -6,9 +6,9 @@ return {
         -- r formatter
         ["r"] = { "rprettify" },
         ["python"] = { "black" },
-        ["quarto"] = { "mdformat" },
-        ["rmd"] = { "mdformat" },
-        ["markdown"] = { "mdformat" },
+        ["quarto"] = { "markdownlint-cli2" },
+        ["rmd"] = { "markdownlint-cli2" },
+        ["markdown"] = { "markdownlint-cli2" },
         ["css"] = { "prettierd" },
         ["yaml"] = { "prettierd" },
         ["*"] = { "typos", "trim_whitespace", "trim_newlines" },
