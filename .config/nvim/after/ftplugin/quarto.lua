@@ -79,6 +79,9 @@ local is_code_chunk = function()
   end
 end
 
+--- Insert code chunk of given language
+--- Splits current chunk if already within a chunk
+--- @param lang string
 local insert_code_chunk = function(lang)
   vim.api.nvim_feedkeys(
     vim.api.nvim_replace_termcodes("<esc>", true, false, true),
