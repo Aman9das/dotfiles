@@ -45,6 +45,14 @@ return {
   {
     "jmbuhr/otter.nvim",
     lazy = true,
+    keys = {
+      {
+        "<leader>cF",
+        require("otter").ask_format,
+        mode = { "n" },
+        desc = "code chunk format",
+      },
+    },
     dependencies = {
       "hrsh7th/nvim-cmp", -- optional, for completion
       "neovim/nvim-lspconfig",

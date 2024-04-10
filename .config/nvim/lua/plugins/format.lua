@@ -4,7 +4,7 @@ return {
     opts = {
       formatters_by_ft = {
         -- r formatter
-        ["r"] = { "rprettify" },
+        -- ["r"] = { "rprettify" },
         ["python"] = { "black" },
         ["quarto"] = { "markdownlint-cli2" },
         ["rmd"] = { "markdownlint-cli2" },
@@ -45,7 +45,9 @@ return {
             },
             -- Map of treesitter language to formatters to use
             -- (defaults to the value from formatters_by_ft)
-            lang_to_formatters = {},
+            lang_to_formatters = {
+              ["r"] = { "rprettify" },
+            },
           },
         },
       },
