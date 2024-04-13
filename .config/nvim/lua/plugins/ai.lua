@@ -62,6 +62,7 @@ return {
   -- ChatGPT Configuration
   {
     "jackMort/ChatGPT.nvim",
+    enabled = false,
     event = "VeryLazy",
     keys = {
       { "<leader>oc", ":ChatGPT<CR>", desc = "ChatGPT" },
