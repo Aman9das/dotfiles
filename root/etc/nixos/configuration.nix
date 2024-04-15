@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "E14nix"; # Define your hostname.
+  networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -77,19 +77,21 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
+  
+  # Enable Flatpaks
+  services.flatpak.enable = true;
+  services.flatpak.remotes = {
+    "flathub" = "https://flathub.org/repo/flathub.flatpakrepo";
+  };
+  
+  # Enable Flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.aman = {
     isNormalUser = true;
-    description = "Aman Das";
+    description = "Aman";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-      thunderbird
-      vivaldi
-      logseq
-      calibre
-    ];
   };
 
   # Allow unfree packages
@@ -98,12 +100,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    git
-    wezterm
   ];
-
+  
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -129,8 +127,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  system.stateVersion = "23.05"; # Did you read the comment?
 
 }
