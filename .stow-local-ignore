@@ -26,3 +26,6 @@ _darcs
 
 # root directory
 root
+
+# nixos directory
+nixos

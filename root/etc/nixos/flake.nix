@@ -36,7 +36,7 @@
     };
 
     # declarative-flatpak support
-    flatpaks.url = "github:GermanBread/declarative-flatpak/stable";
+    nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.  };
   };
 
   # `outputs` are all the build result of the flake.
@@ -44,7 +44,7 @@
   # parameters in `outputs` are defined in `inputs` and can be referenced by their names.
   # However, `self` is an exception, This special parameter points to the `outputs` itself (self-reference)
   # The `@` syntax here is used to alias the attribute set of the inputs's parameter, making it convenient to use inside the function.
-  outputs = { self, nixpkgs, home-manager, flatpaks, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nix-flatpak, ... }@inputs: {
     nixosConfigurations = {
       # By default, NixOS will try to refer the nixosConfiguration with its hostname.
       # so the system named `nixos-test` will use this configuration.
@@ -79,9 +79,8 @@
         # specialArgs = {...}  # pass custom arguments into sub module.
         modules = [
 
-
           # declarative-flatpak module
-          flatpaks.nixosModules.default
+          nix-flatpak.nixosModules.nix-flatpak
 
           # Import the configuration.nix we used before, so that the old configuration file can still take effect.
           # Note: /etc/nixos/configuration.nix itself is also a Nix Module, so you can import it directly here
@@ -98,7 +97,7 @@
             home-manager.users.aman = import ./home.nix;
 
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-            home-manager.sharedModules = [ flatpaks.homeManagerModules.default ];
+            home-manager.sharedModules = [ nix-flatpak.homeManagerModules.nix-flatpak ];
           }
 
         ];

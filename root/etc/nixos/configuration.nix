@@ -80,9 +80,14 @@
 
   # Enable Flatpaks
   services.flatpak.enable = true;
-  services.flatpak.remotes = {
-    "flathub" = "https://flathub.org/repo/flathub.flatpakrepo";
-  };
+  services.flatpak.remotes = [
+  { name = "flathub-beta"; location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo"; }
+  { name = "flathub"; location = "https://flathub.org/repo/flathub.flatpakrepo"; }
+  ];
+
+  services.flatpak.packages = [
+      "com.github.ahrm.sioyek"
+  ];
 
   # Enable Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -109,15 +114,18 @@
     lazygit # git tui
     ripgrep # telescope
     fzf #telescope
+    fd # find alternative
     wezterm # terminal emulator
+    unzip # archive
+    wget # download util
+    gccgo binutils # compile utils
 
+    wl-clipboard # wayland clipboard
+
+    # languages
+    python3
+    nodejs_21
   ];
-
-  services.flatpak = {
-    packages = [
-      "flathub:app/com.github.tchx84.Flatseal//stable"
-    ];
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

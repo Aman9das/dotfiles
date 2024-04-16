@@ -44,7 +44,9 @@
     vivaldi # browser
     logseq # knowledge base
     calibre # book
-    sioyek # reader
+    # sioyek # reader
+    xournalpp # writing
+    telegram-desktop # chat
 
     quarto # Pandoc
     ( rstudioWrapper.override { packages = with rPackages; [
@@ -63,6 +65,10 @@
   ];
 
   fonts.fontconfig.enable = true;
+
+  services.flatpak.packages = [
+      "com.github.ahrm.sioyek"
+      ];
 
   # Bash Config
   programs.bash = {
