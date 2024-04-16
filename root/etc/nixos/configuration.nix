@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "E14nix"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -52,7 +52,7 @@
   # Configure keymap in X11
   services.xserver = {
     layout = "us";
-    xkbVariant = "";
+    xkbVariant = ",in";
   };
 
   # Enable CUPS to print documents.
@@ -77,13 +77,13 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-  
+
   # Enable Flatpaks
   services.flatpak.enable = true;
   services.flatpak.remotes = {
     "flathub" = "https://flathub.org/repo/flathub.flatpakrepo";
   };
-  
+
   # Enable Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -100,8 +100,25 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+
+    firefox # web browser
+    thunderbird # mail client
+    libreoffice-fresh # office suite
+
+    neovim # editor
+    lazygit # git tui
+    ripgrep # telescope
+    fzf #telescope
+    wezterm # terminal emulator
+
   ];
-  
+
+  services.flatpak = {
+    packages = [
+      "flathub:app/com.github.tchx84.Flatseal//stable"
+    ];
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -127,6 +144,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "23.11"; # Did you read the comment?
 
 }
