@@ -1,3 +1,8 @@
+# Check if Lucida and Intone are in the font list
+if fc-list | grep -q Lucida && fc-list | grep -q Intone; then
+	exit 0
+fi
+
 # Download the Lucas Sans zip file
 wget https://www.wfonts.com/download/data/2016/07/08/lucida-sans/lucida-sans.zip
 # Unzip the file and extract only LSANS.TTF, removing the rest

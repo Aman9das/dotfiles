@@ -15,7 +15,7 @@ local module = {}
 -- function that accepts the config object, like this:
 function module.apply_to_config(config)
 	-- title bar
-	config.window_decorations = "TITLE | RESIZE"
+	config.window_decorations = "RESIZE"
 
 	-- window initial size
 	config.initial_cols = 160

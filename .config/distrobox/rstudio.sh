@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Check if rstudio is already installed
+if which rstudio >/dev/null; then
+	exit 0
+fi
+
 # Define the main function which will contain your code
 main() {
 	# Your code goes here
