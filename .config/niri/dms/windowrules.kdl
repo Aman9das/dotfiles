@@ -1,0 +1,28 @@
+// DMS Window Rules - Managed by DankMaterialShell
+// Do not edit manually - changes may be overwritten
+
+// @id=dms-floating-windows @name=DMS Floating Windows
+window-rule {
+    match app-id="^com.danklinux.dms$"
+    open-floating true
+}
+
+// @id=wr_1789076310919802125 @name=be.alexandervanhee.gradia
+window-rule {
+    match app-id="^be.alexandervanhee.gradia$"
+    open-floating true
+}
+
+// @id=wr_1789364535359612581 @name=steam
+window-rule {
+    match app-id="^steam$"
+    open-maximized true
+}
+
+// @id=wr_1789690054942483676 @name=com.mitchellh.ghostty
+window-rule {
+    match app-id="^com.mitchellh.ghostty$"
+    background-effect {
+        blur true
+    }
+}

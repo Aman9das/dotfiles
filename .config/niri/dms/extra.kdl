@@ -1,0 +1,25 @@
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+}
+
+environment {
+    QT_QPA_PLATFORM "wayland"
+    QT_QPA_PLATFORMTHEME "qt6ct"
+}
+
+spawn-at-startup "kdeconnectd"
+
+layer-rule {
+    match namespace="^dms:blurwallpaper$"
+    place-within-backdrop true
+}
+
+layer-rule {
+    match namespace="^quickshell$"
+    place-within-backdrop false
+}
+
+layout {
+    empty-workspace-above-first
+}
