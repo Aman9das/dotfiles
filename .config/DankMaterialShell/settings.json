@@ -98,7 +98,18 @@
   "acSuspendTimeout": 600,
   "acPostLockMonitorTimeout": 300,
   "batteryChargeLimit": 80,
+  "terminalsAlwaysDark": true,
   "matugenTemplateNeovim": true,
+  "matugenTemplateNeovimSettings": {
+    "dark": {
+      "baseTheme": "vscode_dark",
+      "harmony": 0.5
+    },
+    "light": {
+      "baseTheme": "vscode_light",
+      "harmony": 0.5
+    }
+  },
   "osdPowerProfileEnabled": true,
   "powerActionHoldDuration": 1,
   "screenPreferences": {
@@ -257,5 +268,5 @@
       "trigger": "cb"
     }
   },
-  "configVersion": 17
+  "configVersion": 18
 }

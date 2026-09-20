@@ -1,6 +1,6 @@
 binds {
     Ctrl+Alt+Delete hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
-    Ctrl+Print hotkey-overlay-title="Screenshot: Scroll" repeat=false { spawn "sh" "-c" "dms screenshot scroll"; }
+    Ctrl+Print repeat=false hotkey-overlay-title="Screenshot: Scroll" { spawn "sh" "-c" "dms screenshot scroll"; }
     Ctrl+Shift+R hotkey-overlay-title="Rename Workspace" { spawn "dms" "ipc" "call" "workspace-rename" "open"; }
     Ctrl+XF86AudioLowerVolume allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "decrement" "3"; }
     Ctrl+XF86AudioRaiseVolume allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "increment" "3"; }
@@ -14,7 +14,7 @@ binds {
     Mod+Space hotkey-overlay-title="Application Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
     Mod+V hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
     Mod+Y hotkey-overlay-title="Browse Wallpapers" { spawn "dms" "ipc" "call" "dankdash" "wallpaper"; }
-    Print repeat=false hotkey-overlay-title="Screenshot: Region" { spawn "sh" "-c" "dms ipc call niri screenshot"; }
+    Print repeat=false hotkey-overlay-title="Screenshot: Region" { spawn "sh" "-c" "dms screenshot --stdout | flatpak run --file-forwarding be.alexandervanhee.gradia"; }
     Super+A repeat=false hotkey-overlay-title="AI Assistant" { spawn "sh" "-c" "dms ipc call plugins toggle aiAssistant"; }
     Super+Shift+Q hotkey-overlay-title="Power Menu: Toggle" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
     Super+X hotkey-overlay-title="Power Menu: Toggle" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
@@ -26,7 +26,7 @@ binds {
     XF86AudioPlay allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "playPause"; }
     XF86AudioPrev allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "previous"; }
     XF86AudioRaiseVolume allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "increment" "3"; }
-    XF86Launch1 repeat=false hotkey-overlay-title="Screenshot: Region" { spawn "sh" "-c" "dms ipc call niri screenshot"; }
+    XF86Launch1 repeat=false hotkey-overlay-title="Screenshot: Region" { spawn "sh" "-c" "dms screenshot --stdout | flatpak run --file-forwarding be.alexandervanhee.gradia"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "decrement" "5" ""; }
     XF86MonBrightnessUp allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "increment" "5" ""; }
     Mod+1 { focus-workspace 1; }
