@@ -284,4 +284,5 @@ include "dms/cursor.kdl"
 
 include "dms/windowrules.kdl"
 include "dms/extra.kdl"
+include "dms/scripts.kdl"
 include "dms/input.kdl"

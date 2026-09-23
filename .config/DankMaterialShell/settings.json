@@ -62,6 +62,11 @@
       "id": "builtin_vpn",
       "enabled": true,
       "width": 50
+    },
+    {
+      "id": "plugin_quickCapture",
+      "enabled": true,
+      "width": 50
     }
   ],
   "showWorkspacePadding": true,
