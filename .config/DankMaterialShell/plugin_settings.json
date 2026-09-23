@@ -1,0 +1,118 @@
+{
+  "dankKDEConnect": {
+    "enabled": true,
+    "selectedDeviceId": "2a7ba7e53ee24a7ca5ef4e78e889dd7c"
+  },
+  "dankBatteryAlerts": {
+    "enabled": true,
+    "criticalThreshold": 10
+  },
+  "dankClight": {
+    "enabled": false
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "="
+  },
+  "aiAssistant": {
+    "enabled": false,
+    "providers": {
+      "openai": {
+        "baseUrl": "https://api.deepseek.com",
+        "model": "gpt-5.2",
+        "apiKey": "sk-6833674919bd48da946f7f11a5af7a08",
+        "saveApiKey": true,
+        "apiKeyEnvVar": "",
+        "temperature": 0.7,
+        "maxTokens": 4096,
+        "timeout": 30
+      },
+      "anthropic": {
+        "baseUrl": "https://api.anthropic.com",
+        "model": "claude-sonnet-4-5",
+        "apiKey": "",
+        "saveApiKey": false,
+        "apiKeyEnvVar": "",
+        "temperature": 0.7,
+        "maxTokens": 4096,
+        "timeout": 30
+      },
+      "gemini": {
+        "baseUrl": "https://generativelanguage.googleapis.com",
+        "model": "gemini-3.5-flash",
+        "apiKey": "AIzaSyBZ2Q0YsZmUXQcHa_OqqZfqDDT5uzNSQC8",
+        "saveApiKey": true,
+        "apiKeyEnvVar": "",
+        "temperature": 0.7,
+        "maxTokens": 4096,
+        "timeout": 30,
+        "geminiWebSearch": false
+      },
+      "inception": {
+        "baseUrl": "https://api.inceptionlabs.ai/v1",
+        "model": "mercury-2",
+        "apiKey": "",
+        "saveApiKey": false,
+        "apiKeyEnvVar": "",
+        "temperature": 0.75,
+        "maxTokens": 8192,
+        "timeout": 30,
+        "inceptionReasoningEffort": "medium",
+        "inceptionReasoningSummary": true,
+        "inceptionReasoningSummaryWait": false
+      },
+      "ollama": {
+        "baseUrl": "http://localhost:11434",
+        "model": "",
+        "apiKey": "",
+        "saveApiKey": false,
+        "apiKeyEnvVar": "",
+        "temperature": 0.7,
+        "maxTokens": 4096,
+        "timeout": 30
+      },
+      "custom": {
+        "baseUrl": "https://api.openai.com",
+        "model": "gpt-5.2",
+        "apiKey": "",
+        "saveApiKey": false,
+        "apiKeyEnvVar": "",
+        "temperature": 0.7,
+        "maxTokens": 4096,
+        "timeout": 30
+      }
+    },
+    "provider": "gemini",
+    "baseUrl": "https://generativelanguage.googleapis.com",
+    "model": "gemini-3.5-flash",
+    "apiKey": "AIzaSyBZ2Q0YsZmUXQcHa_OqqZfqDDT5uzNSQC8",
+    "saveApiKey": true,
+    "apiKeyEnvVar": "",
+    "temperature": 0.7,
+    "maxTokens": 4096,
+    "timeout": 30,
+    "geminiWebSearch": false
+  },
+  "dankPomodoroTimer": {
+    "enabled": true,
+    "autoSetDND": false
+  },
+  "quickCapture": {
+    "enabled": true,
+    "regionHudScale": "auto",
+    "menuRightClickAction": "copy",
+    "rightClickAction": "clipboard",
+    "middleClickAction": "region",
+    "micDevice": "default_input",
+    "systemAudioDevice": "default_output",
+    "recordingBackend": "auto",
+    "recordingCodec": "auto",
+    "recordingQuality": "medium",
+    "recordingScreenTarget": "screen",
+    "color_palette_preset": "adaptive",
+    "modalDisplayTarget": "focused",
+    "backgroundDefaultAlignment": "center",
+    "backgroundDefaultAspectRatio": "auto",
+    "backgroundDefaultMode": "solid"
+  }
+}
