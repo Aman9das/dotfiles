@@ -4,18 +4,10 @@ This directory contains the dotfiles for my system
 
 ## Requirements
 
-Ensure you have the following installed on your system
-
-### Git
+Ensure you have the following installed on your system:
 
 ```
-sudo dnf install git
-```
-
-### Stow
-
-```
-sudo dnf install stow
+sudo dnf install git stow
 ```
 
 ## Installation
@@ -30,9 +22,13 @@ cd dotfiles
 then use GNU stow to create symlinks
 
 ```
-stow .
+stow --no-folding .
 ```
 
 ## Resources
 
 [Stow has forever changed the way I manage my dotfiles](https://youtu.be/y6XCebnB9gs)
+
+## Notes
+
+- To-do: Firefox sync
