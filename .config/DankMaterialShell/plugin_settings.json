@@ -114,5 +114,10 @@
     "backgroundDefaultAlignment": "center",
     "backgroundDefaultAspectRatio": "auto",
     "backgroundDefaultMode": "solid"
+  },
+  "emojiLauncher": {
+    "enabled": true,
+    "trigger": ":",
+    "recentEmojis": "😝"
   }
 }

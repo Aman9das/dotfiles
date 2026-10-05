@@ -26,3 +26,9 @@ window-rule {
         blur true
     }
 }
+
+// @id=wr_1790379767511246295 @name=Slay the Spire 2
+window-rule {
+    match app-id="^Slay the Spire 2$"
+    open-maximized true
+}

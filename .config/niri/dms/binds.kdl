@@ -1,10 +1,12 @@
 binds {
+    Alt+Print repeat=false hotkey-overlay-title="Screenshot: WIndow" { spawn "sh" "-c" "dms ipc call quickCapture screenshot window edit"; }
+    Alt+XF86Launch1 repeat=false { spawn "sh" "-c" "dms ipc call quickCapture screenshot window edit"; }
     Ctrl+Alt+Delete hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
-    Ctrl+Print repeat=false hotkey-overlay-title="Screenshot: Scroll" { spawn "sh" "-c" "dms screenshot scroll"; }
+    Ctrl+Print repeat=false hotkey-overlay-title="Screenshot: Scroll" { spawn "sh" "-c" "dms ipc call quickCapture screenshot scroll edit"; }
     Ctrl+Shift+R hotkey-overlay-title="Rename Workspace" { spawn "dms" "ipc" "call" "workspace-rename" "open"; }
     Ctrl+XF86AudioLowerVolume allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "decrement" "3"; }
     Ctrl+XF86AudioRaiseVolume allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "increment" "3"; }
-    Ctrl+XF86Launch1 repeat=false hotkey-overlay-title="Screenshot: Scroll" { spawn "sh" "-c" "dms screenshot scroll"; }
+    Ctrl+XF86Launch1 repeat=false hotkey-overlay-title="Screenshot: Scroll" { spawn "sh" "-c" "dms ipc call quickCapture screenshot scroll edit"; }
     Mod+Alt+L hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
     Mod+Comma hotkey-overlay-title="Settings" { spawn "dms" "ipc" "call" "settings" "focusOrToggle"; }
     Mod+M hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
@@ -14,8 +16,8 @@ binds {
     Mod+Space hotkey-overlay-title="Application Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
     Mod+V hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
     Mod+Y hotkey-overlay-title="Browse Wallpapers" { spawn "dms" "ipc" "call" "dankdash" "wallpaper"; }
-    Print repeat=false hotkey-overlay-title="Screenshot: Region" { spawn "dms" "screenshot"; }
-    Super+A repeat=false hotkey-overlay-title="AI Assistant" { spawn "sh" "-c" "dms ipc call plugins toggle aiAssistant"; }
+    Print repeat=false hotkey-overlay-title="Screenshot: Region" { spawn "sh" "-c" "dms ipc call quickCapture screenshot region edit"; }
+    Super+A hotkey-overlay-title="AI Assistant" repeat=false { spawn "sh" "-c" "dms ipc call plugins toggle aiAssistant"; }
     Super+Shift+Q hotkey-overlay-title="Power Menu: Toggle" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
     Super+X hotkey-overlay-title="Power Menu: Toggle" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "decrement" "3"; }
@@ -26,7 +28,7 @@ binds {
     XF86AudioPlay allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "playPause"; }
     XF86AudioPrev allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "previous"; }
     XF86AudioRaiseVolume allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "increment" "3"; }
-    XF86Launch1 repeat=false hotkey-overlay-title="Screenshot: Region" { spawn "dms" "screenshot"; }
+    XF86Launch1 repeat=false { spawn "sh" "-c" "dms ipc call quickCapture screenshot region edit"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "decrement" "5" ""; }
     XF86MonBrightnessUp allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "increment" "5" ""; }
     Mod+1 { focus-workspace 1; }
@@ -63,8 +65,6 @@ binds {
     Mod+U { focus-workspace-down; }
     Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
     Mod+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
-    Alt+Print repeat=false hotkey-overlay-title="Screenshot Window" { screenshot-window; }
-    Alt+XF86Launch1 repeat=false hotkey-overlay-title="Screenshot Window" { screenshot-window; }
     Mod+BracketLeft { consume-or-expel-window-left; }
     Mod+BracketRight { consume-or-expel-window-right; }
     Mod+C { center-column; }

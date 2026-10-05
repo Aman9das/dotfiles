@@ -171,6 +171,10 @@
           "enabled": true
         },
         {
+          "id": "quickCapture",
+          "enabled": true
+        },
+        {
           "id": "clipboard",
           "enabled": true
         },
