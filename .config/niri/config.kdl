@@ -5,13 +5,6 @@
 config-notification {
     disable-failed
 }
-// Outputs from existing configuration
-/-output "eDP-2" {
-    mode "2560x1600@239.998993"
-    position x=2560 y=0
-    variable-refresh-rate
-}
-
 
 gestures {
     hot-corners {
@@ -41,31 +34,6 @@ input {
         numlock
     }
 
-    // Next sections include libinput settings.
-    // Omitting settings disables them, or leaves them at their default values.
-    // All commented-out settings here are examples, not defaults.
-    touchpad {
-        // off
-        tap
-        // dwt
-        // dwtp
-        // drag false
-        // drag-lock
-        natural-scroll
-        // accel-speed 0.2
-        // accel-profile "flat"
-        // scroll-method "two-finger"
-        // disabled-on-external-mouse
-    }
-
-    mouse {
-        // off
-        // natural-scroll
-        // accel-speed 0.2
-        // accel-profile "flat"
-        // scroll-method "no-scroll"
-    }
-
     trackpoint {
         // off
         // natural-scroll
@@ -84,13 +52,18 @@ input {
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
     // focus-follows-mouse max-scroll-amount="0%"
 }
+
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
 // The built-in laptop monitor is usually called "eDP-1".
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
-
+/-output "eDP-2" {
+    mode "2560x1600@239.998993"
+    position x=2560 y=0
+    variable-refresh-rate
+}
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
@@ -153,7 +126,7 @@ layer-rule {
 }
 overview {
     workspace-shadow {
-        // off
+        off
     }
 }
 // Add lines like this to spawn processes at startup.
@@ -163,7 +136,6 @@ overview {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 environment {
   XDG_CURRENT_DESKTOP "niri"
-  XDG_MENU_PREFIX "plasma-"
 }
 hotkey-overlay {
     skip-at-startup
@@ -232,7 +204,6 @@ window-rule {
     match app-id=r#"^gnome-calculator$"#
     match app-id=r#"^galculator$"#
     match app-id=r#"^blueman-manager$"#
-    match app-id=r#"^org\.gnome\.Nautilus$"#
     match app-id=r#"^xdg-desktop-portal$"#
     open-floating true
 }
@@ -254,12 +225,6 @@ window-rule {
     match app-id="zoom"
     open-floating true
 }
-// Open dms windows as floating by default
-window-rule {
-    match app-id=r#"org.quickshell$"#
-    match app-id=r#"com.danklinux.dms$"#
-    open-floating true
-}
 debug {
     honor-xdg-activation-with-invalid-serial
 }
@@ -275,14 +240,12 @@ recent-windows {
 }
 
 // Include dms files
-include "dms/colors.kdl"
-include "dms/layout.kdl"
-include "dms/alttab.kdl"
-include "dms/binds.kdl"
-include "dms/outputs.kdl"
-include "dms/cursor.kdl"
-
+include optional=true "dms/colors.kdl"
+include optional=true "dms/layout.kdl"
+include optional=true "dms/alttab.kdl"
+include optional=true "dms/binds.kdl"
+include optional=true "dms/outputs.kdl"
+include optional=true "dms/cursor.kdl"
+include optional=true "dms/input.kdl"
+include optional=true "dms/extra.kdl"
 include "dms/windowrules.kdl"
-include "dms/extra.kdl"
-include "dms/scripts.kdl"
-include "dms/input.kdl"
